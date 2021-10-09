@@ -6,15 +6,19 @@ Note: Whenever \*nix is used here, it refers to operating systems which are some
 
 *This step can usually be ignored, since most modern operating systems come with a Java installation*
 
-To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to [the oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. For other \*nix operating systems, follow the distribution-dependent instructions for installing java.
+To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to [the Oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. For other \*nix operating systems, follow the distribution-dependent instructions for installing java.
 
 ### Android Studio
+
+> The editor will be an extension of your hand; the keys will sing as they slice their way through text and thought.
+
+*(Andrew Hunt and David Thomas, The Pragmatic Programmer)*
 
 Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relavant integration for FTC is donwloading code onto android devices.
 
 To install Android Studio for Windows or MacOS computers, go to [the Android Studio site](https://developer.android.com/studio/) and follow the installation instructions for your OS. For \*nix operating systems, follow the distribution-dependent instructions for installing Android Studio.
 
-You should spend some time familiarizing yourself with Android Studio and setting it up.
+You should definitely spend some time customizing and familiarizing yourself with Android Studio.
 
 # Project Setup
 
@@ -34,4 +38,4 @@ In addition, if you open the project in Android Studio and switch to Android pro
 
 ### ElectronVolts Library
 
-The latest version of the ElectronVolts library does not exist, as of yet, in its own repository. You can find a copy of it on the [ElectronVolts github page](www.example.com), on the current year's repository and branch, in `TeamCode/src/main/java/ftc`. For example, for the 2021-2022 season, the current branch is Season2021, on repository __. Copy all the files in that directory directly into your project's working folder anywhere you like.
+The latest version of the ElectronVolts library does not exist, as of yet, in its own repository. You can find a copy of it on the [ElectronVolts github page](www.example.com), on the current year's repository and branch, in `TeamCode/src/main/java/ftc`. For example, during the 2021-2022 season, it was in [FtcRobotController](https://github.com/FTC7393/FtcRobotController), on branch [Season2021](https://github.com/FTC7393/FtcRobotController/tree/Season2021). Copy all the files in that directory to anywhere within your project's working folder.
