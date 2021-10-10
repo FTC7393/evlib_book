@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>FTC Programming with ElectronVolts</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><a href="starter/index.html"><strong aria-hidden="true">2.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/config.html"><strong aria-hidden="true">2.1.</strong> Robot Config</a></li></ol></li><li class="chapter-item expanded "><a href="opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li class="chapter-item expanded "><a href="state_machine/index.html"><strong aria-hidden="true">4.</strong> The State Machine</a></li><li class="chapter-item expanded "><a href="hardware/index.html"><strong aria-hidden="true">5.</strong> Hardware</a></li><li class="chapter-item expanded "><a href="vcs/index.html"><strong aria-hidden="true">6.</strong> Version Control</a></li><li class="chapter-item expanded "><a href="meta/index.html"><strong aria-hidden="true">7.</strong> Metaprogramming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="meta/logger.html"><strong aria-hidden="true">7.1.</strong> Logger</a></li><li class="chapter-item expanded "><a href="meta/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="deps/index.html"><strong aria-hidden="true">8.</strong> Dependencies</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">FTC Programming with ElectronVolts</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="intro"><a class="header" href="#intro">Intro</a></h1>
+<p>Building FTC code has been, in my experience, a huge pain. Fortunately, you don't have to build it all yourself. A large source of difficulty in writing code is repetition (think functions with 10 parameters that you have to call fifty times).</p>
+<p>This tutorial teaches two different libraries together: The Qualcomm provided framework, and the frontend used by Team 7393 (which exists itself on top of the Qualcomm library). It is intended for those who don't want to be limited by block-based programming anymore, or are just getting started.</p>
+<p><strong>Keep in mind</strong>, this book is not meant to teach how to do text-based programming. It also isn't meant to be a primer on hardware and configuration in general, which can be found on the FTC <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki">github docs</a>. It is only meant to teach these libraries. Basically, if you don't know any, you should go study up on java. Alternatively, if you've already know a curly brace/c-like language, then it might work out for you to just wing it.</p>
+<div style="break-before: page; page-break-before: always;"></div><p>Note: Whenever *nix is used here, it refers to operating systems which are somehow based off of Unix, such as Linux, BSD, and such (while excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.</p>
+<h1 id="development-environment"><a class="header" href="#development-environment">Development Environment</a></h1>
+<h3 id="java"><a class="header" href="#java">Java</a></h3>
+<p><em>This step can usually be ignored, since most modern operating systems come with a Java installation</em></p>
+<p>To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to <a href="https://www.oracle.com/java/technologies/downloads/">the Oracle site</a> and follow the installation instructions for your OS. For other *nix operating systems, follow the distribution-dependent instructions for installing java.</p>
+<h3 id="android-studio"><a class="header" href="#android-studio">Android Studio</a></h3>
+<blockquote>
+<p>The editor will be an extension of your hand; the keys will sing as they slice their way through text and thought.</p>
+</blockquote>
+<p><em>(Andrew Hunt and David Thomas, The Pragmatic Programmer)</em></p>
+<p>Android Studio is an &quot;IDE&quot;, or Integrated Development Environment. It serves the same purpose as a text editor, but has &quot;Integrations&quot;, such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relevant integration for FTC is donwloading code onto android devices.</p>
+<p>To install Android Studio for Windows or MacOS computers, go to <a href="https://developer.android.com/studio/">the Android Studio site</a> and follow the installation instructions for your OS. For *nix operating systems, follow the distribution-dependent instructions for installing Android Studio.</p>
+<p>You should definitely spend some time customizing and familiarizing yourself with Android Studio.</p>
+<h1 id="project-setup"><a class="header" href="#project-setup">Project Setup</a></h1>
+<h3 id="ftc-framework"><a class="header" href="#ftc-framework">FTC Framework</a></h3>
+<p>Your entire project is based off the FTC framework. To begin a new FTC project, copy all of the code from <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">the FTC repository</a> into your own project. You can do this by clicking the &quot;Code&quot; button, then clicking &quot;Download ZIP&quot;, as shown.</p>
+<p><img src="intro/./setup_github_download.png" alt="Download from Github" /></p>
+<p>It is better, though, to use Version Control to do this. This is discussed more in the Version Control section (TODO!!).</p>
+<p>You can then start writing your code in (<strong>and only in</strong>) the <code>TeamCode/src/main/java</code> directory.</p>
+<p>In addition, if you open the project in Android Studio and switch to Android project view as shown, you can navigate to <code>TeamCode/java</code> to get to the same directory.</p>
+<p><img src="intro/./setup_android_project_view.png" alt="Android project view" /></p>
+<h3 id="electronvolts-library"><a class="header" href="#electronvolts-library">ElectronVolts Library</a></h3>
+<p>The latest version of the ElectronVolts library does not exist, as of yet, in its own repository. You can find a copy of it on the <a href="intro/www.example.com">ElectronVolts github page</a>, on the current year's repository and branch, in <code>TeamCode/src/main/java/ftc</code>. For example, during the 2021-2022 season, it was in <a href="https://github.com/FTC7393/FtcRobotController">FtcRobotController</a>, on branch <a href="https://github.com/FTC7393/FtcRobotController/tree/Season2021">Season2021</a>. Copy all the files in that directory to anywhere within your project's working folder.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="how-the-robot-works"><a class="header" href="#how-the-robot-works">How the robot works</a></h2>
+<p>This part is review for those who've already done FTC.</p>
+<p>In summary, the FTC robot core communicates over direct wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read about it on the <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System">FTC docs page</a>.</p>
+<p>It is important to note that the program installed on the Robot Controller runs <em>instantly</em>. You'll see why this is important in the next section.</p>
+<h2 id="ftc-framework-1"><a class="header" href="#ftc-framework-1">FTC Framework</a></h2>
+<p>The software on the phone which communicates with the robot is constant. However, the code on the robot is dependent on you. Even so, there's a certain way that your program has to move motors, read from sensors, and communicate with the app on the phone. This is why, when writing your FTC program, you must do it within a framework.</p>
+<p>For example, a wrong way to write FTC code:</p>
+<pre><code class="language-java">import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@Autonomous(name = &quot;FooOp&quot;)
+public class FooOp {
+    public static void main(String[] args) {
+        Servo s = (Servo) hardwareMap.get(&quot;myServo&quot;);
+        int i = 0;
+
+        while (true) {
+            s.setPosition(i);
+            i = (i + 10) % 180;
+        }
+    }
+}
+</code></pre>
+<p>There are a few things wrong with this.</p>
+<ul>
+<li>The <code>hardwareMap</code> does not even exist, so you can't control any hardware.</li>
+<li>The <code>main</code> method here will not be run at all -- remember, the FTC bot runs the program instantly, so it has to do some steps before it can run your code (aka run its own main function).</li>
+<li>The <code>@Autonomous</code> annotation is wrong -- this class is not an &quot;Operation Mode&quot;, which is what the framework is expecting. This will probably result in some strange runtime error (TODO: Add a picture of that runtime error).</li>
+</ul>
+<p>Here is a correct implementation:</p>
+<pre><code class="language-java">import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@Autonomous(name = &quot;FooOp&quot;)
+public class FooOp extends LinearOpMode {
+    @Override
+    public void runOpMode() {
+        Servo s = (Servo) hardwareMap.get(&quot;myServo&quot;);
+        int i = 0;
+
+        waitForStart();
+
+        while (true) {
+            s.setPosition(i);
+            i = (i + 10) % 180;
+        }
+    }
+}
+</code></pre>
+<p>All the problems in the previous code have been corrected here:</p>
+<ul>
+<li>The <code>hardwareMap</code> now exists: It exists in the superclasses of <code>FooOp</code></li>
+<li>The <code>@Autonomous</code> annotation now makes sense: It is annotating a class which is a Linear Operation Mode. Furthermore, that means when you download this program, you can use your driver station (or phone) to select and run your code.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-electronvolts-library"><a class="header" href="#the-electronvolts-library">The ElectronVolts Library</a></h1>
+<h2 id="what-it-is"><a class="header" href="#what-it-is">What it is:</a></h2>
+<ul>
+<li>A tool to make writing FTC code faster</li>
+<li>A collection of classes containing boilerplate code</li>
+<li>Stable</li>
+<li>What this book is trying to get you to use</li>
+</ul>
+<h2 id="what-it-isnt"><a class="header" href="#what-it-isnt">What it isn't:</a></h2>
+<ul>
+<li>Magic</li>
+<li>Required</li>
+</ul>
+<p>The ElectronVolts library contains a lot of helpful stuff, but only if it is used correctly. It's a layer of abstraction on top of the Qualcomm framework, allowing you to write your code in a stable way.</p>
+<p>However, learning <em>yet another</em> layer of abstraction is pretty difficult, and if the FTC library suits your purposes, it's what you should stick with. But if you struggle with these problems:</p>
+<ul>
+<li>Value fudging</li>
+<li>Untraceable logic</li>
+<li>Not knowing what's going on</li>
+<li>Insanity</li>
+</ul>
+<p>TODO: Add concrete example of a problem</p>
+<p>Maybe this library is a good fit for you. If it isn't, then you might want to stop here and read the FTC provided documentation instead.</p>
+<h2 id="library-structure"><a class="header" href="#library-structure">Library Structure</a></h2>
+<p>The library is split up into two parts: <code>electronvolts</code> and <code>evlib</code>. The <code>electronvolts</code> code consists of helper classes which are used to make <code>evlib</code>, which is the part of the library you will probably be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.</p>
+<p>In the previous tutorial, you saw the <code>LinearOpMode</code>. There are many others that Qualcomm provides, and can be used along with the ElectronVolts library, but the ElectronVolts library contains its own, preferred Operation Modes, which you will see in the next chapter.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-starter-program"><a class="header" href="#a-starter-program">A Starter Program</a></h1>
+<p>To start an ElectronVolts <code>TeleOp</code> project, make a new copy of the Qualcomm framework and add this into your TeamCode directory:</p>
+<pre><code> java
+ ├── MyRobotCfg.java
+ └── MyTeleOp.java
+</code></pre>
+<p>We will add the ElectronVolts library into the directory like so:</p>
+<pre><code> java
+ ├── MyRobotCfg.java
+ ├── MyTeleOp.java
+ └── ftc
+     ├── electronvolts
+     │   └┄┄
+     ├── evlib
+     ┆   └┄┄
+</code></pre>
+<p>Once you've set up those two files, you can start writing FTC code.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="robot-config"><a class="header" href="#robot-config">Robot Config</a></h1>
+<p>In order to access hardware, the Qualcomm framework provides an object called the <code>hardwareMap</code>, which is helpful to think of as a <code>Map&lt;String, HardwareDevice&gt;</code>. You can access sensors and actuators from this object by calling the method <code>get(Class&lt;? extends T&gt;, String) -&gt; T</code> on it.</p>
+<p>ElectronVolts takes this a step further by making the abstract class <code>RobotCfg</code>, which presents all of the hardware that the robot has by default, by default. By &quot;present&quot;, I mean that if you ask for that hardware (with one of the methods below), it will be given to you.</p>
+<p><img src="starter/./config_hardware.png" alt="Hardware presented by default" /></p>
+<p>For example, every FTC compatible phone will have an accelerometer built into itself, and every <code>RobotCfg</code> will also have an accelerometer built into itself. When you have a Robot Config, you can call <code>getAccelerometer() -&gt; Accelerometer</code> on it and work with the accelerometer that way. Like this, we've reduced the amount of arguments you need from two to zero. That might seem small, but little by little, actually sitting down and writing code can become a huge bottleneck. This code will take a bit of that load off the programmer's shoulders.</p>
+<p>This is especially important because of the second use for Robot Configs: <em>it decouples the hardware team from the software team</em>. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.</p>
+<p><strong>The library is still not magic</strong>.</p>
+<p>If you write code that is hard to understand, then putting it all in one place won't make it all that better.</p>
+<p>Start with a Robot Config like so:</p>
+<pre><code class="language-java">MyRobotCfg.java
+
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import ftc.evlib.hardware.config.RobotCfg;
+
+public class MyRobotCfg extends RobotCfg {
+    public MyRobotCfg(HardwareMap hardwareMap) {
+        super(hardwareMap);
+    }
+
+    @Override
+    public void start() {
+
+    }
+
+    @Override
+    public void act() {
+
+    }
+
+    @Override
+    public void stop() {
+
+    }
+}
+
+</code></pre>
+<p>Right now, this config represents an empty bot. It has one brain, one phone, and that's it. This is already pretty powerful -- without any custom logic, you have direct access to all the phone's sensors. This is sufficient for an abstract example, but what if we want to add motors to a bot?</p>
+<p>Let's start by adding a simple DC motor to a bot, called &quot;bruh&quot; (keep in mind, this is still not how you would want to do it in practice, but still an example):</p>
+<pre><code class="language-java">public class MyRobotCfg extends RobotCfg {
+    public final DcMotor myMotor;
+
+    public MyRobotCfg(HardwareMap hardwareMap) {
+        super(hardwareMap);
+        myMotor = hardwareMap.get(DcMotorEx.class, &quot;bruh&quot;);
+    }
+}
+</code></pre>
+<p>Some code is not shown for conciseness.</p>
+<p>This also works with the getter pattern, like so:</p>
+<pre><code class="language-java">public class MyRobotCfg extends RobotCfg {
+    private final DcMotor myMotor;
+
+    public DcMotor getMyMotor() {
+        return myMotor;
+    }
+
+    public MyRobotCfg(HardwareMap hardwareMap) {
+        super(hardwareMap);
+        myMotor = hardwareMap.get(DcMotorEx.class, &quot;bruh&quot;);
+    }
+}
+</code></pre>
+<p>The complete code should look like this:</p>
+<pre><code class="language-java">import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import ftc.evlib.hardware.config.RobotCfg;
+
+public class MyRobotCfg extends RobotCfg {
+    private final DcMotor myMotor;
+
+    public DcMotor getMyMotor() {
+        return myMotor;
+    }
+
+    public MyRobotCfg(HardwareMap hardwareMap) {
+        super(hardwareMap);
+        myMotor = hardwareMap.get(DcMotorEx.class, &quot;bruh&quot;);
+    }
+
+    @Override
+    public void start() {
+
+    }
+
+    @Override
+    public void act() {
+
+    }
+
+    @Override
+    public void stop() {
+
+    }
+}
+</code></pre>
+<p>This is all the code you need to move to the next step. If there is some other types of hardware you'd like to add, check out the <a href="https://javadoc.io/doc/org.firstinspires.ftc">FTC javadoc</a>, or see some more types we've made in the <a href="starter/../../hardware/index.html">Hardware section</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="operation-modes"><a class="header" href="#operation-modes">Operation Modes</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-state-machine"><a class="header" href="#the-state-machine">The State Machine</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hardware"><a class="header" href="#hardware">Hardware</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="version-control"><a class="header" href="#version-control">Version Control</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="metaprogramming"><a class="header" href="#metaprogramming">Metaprogramming</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logger"><a class="header" href="#logger">Logger</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setting-options"><a class="header" href="#setting-options">Setting Options</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
