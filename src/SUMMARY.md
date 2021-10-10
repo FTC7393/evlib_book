@@ -8,4 +8,6 @@
 - [Operation Modes](./opmodes/README.md)
 - [The State Machine](./state_machine/README.md)
 - [Hardware](./hardware/README.md)
+- [Version Control](./vcs/README.md)
 - [Metaprogramming](./meta/README.md)
+- [Dependencies](./deps/README.md)
