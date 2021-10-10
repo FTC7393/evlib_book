@@ -1,6 +1,6 @@
 ## How the robot works
 
-This is all review for those who've already done FTC.
+This part is review for those who've already done FTC.
 
 In summary, the FTC robot core communicates over direct wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read about it on the [FTC docs page](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System).
 
@@ -43,10 +43,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name = "FooOp")
 public class FooOp extends LinearOpMode {
-
     @Override
-    public void runOpMode() throws InterruptedException {
-
+    public void runOpMode() {
         Servo s = (Servo) hardwareMap.get("myServo");
         int i = 0;
 
@@ -56,7 +54,6 @@ public class FooOp extends LinearOpMode {
             s.setPosition(i);
             i = (i + 10) % 180;
         }
-
     }
 }
 ```
