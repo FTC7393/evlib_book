@@ -10,4 +10,6 @@
 - [Hardware](./hardware/README.md)
 - [Version Control](./vcs/README.md)
 - [Metaprogramming](./meta/README.md)
+    - [Logger](./meta/logger.md)
+    - [Setting Options](./meta/options.md)
 - [Dependencies](./deps/README.md)
