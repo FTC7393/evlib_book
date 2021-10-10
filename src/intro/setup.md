@@ -14,7 +14,7 @@ To start, you must first have Java installed. Java 8 or 11 should work, and if y
 
 *(Andrew Hunt and David Thomas, The Pragmatic Programmer)*
 
-Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relavant integration for FTC is donwloading code onto android devices.
+Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relevant integration for FTC is donwloading code onto android devices.
 
 To install Android Studio for Windows or MacOS computers, go to [the Android Studio site](https://developer.android.com/studio/) and follow the installation instructions for your OS. For \*nix operating systems, follow the distribution-dependent instructions for installing Android Studio.
 
