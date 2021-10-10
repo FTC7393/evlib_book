@@ -24,3 +24,7 @@ However, learning *yet another* layer of abstraction is pretty difficult, and if
 TODO: Add concrete example of a problem
 
 Maybe this library is a good fit for you. If it isn't, then you might want to stop here and read the FTC provided documentation instead.
+
+## Library Structure
+
+The library is split up into two parts: `electronvolts` and `evlib`. The `electronvolts` code consists of helper classes which are used to make `evlib`, which is the part of the library you will probably be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.
