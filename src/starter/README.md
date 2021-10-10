@@ -1,6 +1,6 @@
 # A Starter Program
 
-To start an ElectronVolts `TeleOp` project, start a new copy of the Qualcomm framework and add this into your TeamCode directory:
+To start an ElectronVolts `TeleOp` project, make a new copy of the Qualcomm framework and add this into your TeamCode directory:
 
 ```
  java

@@ -28,3 +28,5 @@ Maybe this library is a good fit for you. If it isn't, then you might want to st
 ## Library Structure
 
 The library is split up into two parts: `electronvolts` and `evlib`. The `electronvolts` code consists of helper classes which are used to make `evlib`, which is the part of the library you will probably be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.
+
+In the previous tutorial, you saw the `LinearOpMode`. There are many others that Qualcomm provides, and can be used along with the ElectronVolts library, but the ElectronVolts library contains its own, preferred Operation Modes, which you will see in the next chapter.

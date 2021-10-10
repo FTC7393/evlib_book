@@ -5,6 +5,7 @@
     - [The FTC Framework](./intro/ftc_framework.md)
     - [The ElectronVolts Library](./intro/evlib.md)
 - [A Starter Program](./starter/README.md)
+    - [Robot Config](./starter/config.md)
 - [Operation Modes](./opmodes/README.md)
 - [The State Machine](./state_machine/README.md)
 - [Hardware](./hardware/README.md)
