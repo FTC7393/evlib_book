@@ -59,5 +59,5 @@ public class FooOp extends LinearOpMode {
 ```
 
 All the problems in the previous code have been corrected here:
-- The `hardwareMap` now exists: It exists in the superclass of `LinearOpMode`
+- The `hardwareMap` now exists: It exists in the superclasses of `FooOp`
 - The `@Autonomous` annotation now makes sense: It is annotating a class which is a Linear Operation Mode. Furthermore, that means when you download this program, you can use your driver station (or phone) to select and run your code.
