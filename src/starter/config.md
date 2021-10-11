@@ -28,19 +28,13 @@ public class MyRobotCfg extends RobotCfg {
     }
 
     @Override
-    public void start() {
-
-    }
+    public void start() {}
 
     @Override
-    public void act() {
-
-    }
+    public void act() {}
 
     @Override
-    public void stop() {
-
-    }
+    public void stop() {}
 }
 
 ```
@@ -100,19 +94,13 @@ public class MyRobotCfg extends RobotCfg {
     }
 
     @Override
-    public void start() {
-
-    }
+    public void start() {}
 
     @Override
-    public void act() {
-
-    }
+    public void act() {}
 
     @Override
-    public void stop() {
-
-    }
+    public void stop() {}
 }
 ```
 

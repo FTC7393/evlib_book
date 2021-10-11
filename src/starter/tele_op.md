@@ -19,29 +19,19 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     }
 
     @Override
-    protected void setup() {
-
-    }
+    protected void setup() {}
 
     @Override
-    protected void setup_act() {
-
-    }
+    protected void setup_act() {}
 
     @Override
-    protected void go() {
-
-    }
+    protected void go() {}
 
     @Override
-    protected void act() {
-
-    }
+    protected void act() {}
 
     @Override
-    protected void end() {
-
-    }
+    protected void end() {}
 
     @Override
     protected Function getJoystickScalingFunction() {
@@ -119,14 +109,10 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     }
 
     @Override
-    protected void setup_act() {
-
-    }
+    protected void setup_act() {}
 
     @Override
-    protected void go() {
-
-    }
+    protected void go() {}
 
     @Override
     protected void act() {
@@ -135,9 +121,7 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     }
 
     @Override
-    protected void end() {
-
-    }
+    protected void end() {}
 
     @Override
     protected Function getJoystickScalingFunction() {
