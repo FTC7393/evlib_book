@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>The ElectronVolts Library - FTC Programming with ElectronVolts</title>
+        <title>TeleOp Program - FTC Programming with ElectronVolts</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="../intro/evlib.html" class="active"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><a href="../state_machine/index.html"><strong aria-hidden="true">4.</strong> The State Machine</a></li><li class="chapter-item expanded "><a href="../hardware/index.html"><strong aria-hidden="true">5.</strong> Hardware</a></li><li class="chapter-item expanded "><a href="../vcs/index.html"><strong aria-hidden="true">6.</strong> Version Control</a></li><li class="chapter-item expanded "><a href="../meta/index.html"><strong aria-hidden="true">7.</strong> Metaprogramming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../meta/logger.html"><strong aria-hidden="true">7.1.</strong> Logger</a></li><li class="chapter-item expanded "><a href="../meta/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="../deps/index.html"><strong aria-hidden="true">8.</strong> Dependencies</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="../intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/tele_op.html" class="active"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><a href="../state_machine/index.html"><strong aria-hidden="true">4.</strong> The State Machine</a></li><li class="chapter-item expanded "><a href="../hardware/index.html"><strong aria-hidden="true">5.</strong> Hardware</a></li><li class="chapter-item expanded "><a href="../vcs/index.html"><strong aria-hidden="true">6.</strong> Version Control</a></li><li class="chapter-item expanded "><a href="../meta/index.html"><strong aria-hidden="true">7.</strong> Metaprogramming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../meta/logger.html"><strong aria-hidden="true">7.1.</strong> Logger</a></li><li class="chapter-item expanded "><a href="../meta/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="../deps/index.html"><strong aria-hidden="true">8.</strong> Dependencies</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,41 +134,129 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-electronvolts-library"><a class="header" href="#the-electronvolts-library">The ElectronVolts Library</a></h1>
-<h2 id="what-it-is"><a class="header" href="#what-it-is">What it is:</a></h2>
-<ul>
-<li>A tool to make writing FTC code faster</li>
-<li>A collection of classes containing boilerplate code</li>
-<li>Stable</li>
-<li>What this book is trying to get you to use</li>
-</ul>
-<h2 id="what-it-isnt"><a class="header" href="#what-it-isnt">What it isn't:</a></h2>
-<ul>
-<li>Magic</li>
-<li>Required</li>
-</ul>
-<p>The ElectronVolts library contains a lot of helpful stuff, but only if it is used correctly. It's a layer of abstraction on top of the Qualcomm framework, allowing you to write your code in a stable way.</p>
-<p>However, learning <em>yet another</em> layer of abstraction is pretty difficult, and if the FTC library suits your purposes, it's what you should stick with. But if you struggle with these problems:</p>
-<ul>
-<li>Value fudging</li>
-<li>Untraceable logic</li>
-<li>Not knowing what's going on</li>
-<li>Insanity</li>
-</ul>
-<p>TODO: Add concrete example of a problem</p>
-<p>Maybe this library is a good fit for you. If it isn't, then you might want to stop here and read the FTC provided documentation instead.</p>
-<h2 id="library-structure"><a class="header" href="#library-structure">Library Structure</a></h2>
-<p>The library is split up into two parts: <code>electronvolts</code> and <code>evlib</code>. The <code>electronvolts</code> code consists of helper classes which are used to make <code>evlib</code>, which is the part of the library you will probably be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.</p>
-<p>In the previous tutorial, you saw the <code>LinearOpMode</code>. There are many others that Qualcomm provides, and can be used along with the ElectronVolts library, but the ElectronVolts library contains its own, preferred Operation Modes, which you will see in the next chapter.</p>
+                        <h1 id="teleop-program"><a class="header" href="#teleop-program">TeleOp Program</a></h1>
+<p>If you haven't done FTC before, a TeleOp is Tele-Operation: A period of time when <em>you</em>, the human, control the robot. A TeleOp therefore needs take input from a source (in 2021, an xbox controller), and somehow transform it into actions done by the robot. That's the part you make.</p>
+<p>Let's get right into it, with the following starter code:</p>
+<pre><code class="language-java">MyTeleOp.java
+
+@TeleOp(name = &quot;My TeleOp&quot;)
+public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
+    @Override
+    protected MyRobotCfg createRobotCfg() {
+        return new MyRobotCfg();
+    }
+
+    @Override
+    protected Logger createLogger() {
+        return null;
+    }
+
+    @Override
+    protected void setup() {}
+
+    @Override
+    protected void setup_act() {}
+
+    @Override
+    protected void go() {}
+
+    @Override
+    protected void act() {}
+
+    @Override
+    protected void end() {}
+
+    @Override
+    protected Function getJoystickScalingFunction() {
+        return Functions.linear(1.0);
+    }
+}
+</code></pre>
+<p>This is a <em>lot</em> of code, and we'll break it down more in the next chapter. For now, focus on the methods <code>setup() -&gt; void</code> and <code>act() -&gt; void</code>.</p>
+<p>For now, we'll set the goal of moving the motor counterclockwise when hitting the left trigger of the controller, and clockwise on hitting the right trigger.</p>
+<p>Let's start with the setup part of the program. You might want to import <code>myMotor</code> into this class to be able to use it easily, like this:</p>
+<pre><code class="language-java">public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
+    DcMotor myMotor;
+
+    @Override
+    protected void setup() {
+        myMotor = robotCfg.getMyMotor();
+    }
+}
+</code></pre>
+<p>You can do this even if you're not using the getter pattern. This code tells the program to save a reference to the DcMotor on init. This step isn't necessary, and later this code might be bad. It saves some work if you want to write slightly less though.</p>
+<p>The next step is to actually do something with the motor. For now, let's compute the power the motor should be moved with.</p>
+<pre><code class="language-java">protected void act() {
+    double power = gamepad1.left_trigger - gamepad1.right_trigger;
+}
+</code></pre>
+<p>You can see that <code>gamepad1.left_trigger</code> is not a reference to hardware, but a value. This is another one of the ElectronVolts library's simplifications: Managing the input values. Next, we want to send this computed value to the DC motor.</p>
+<pre><code class="language-java">protected void act() {
+    double power = gamepad1.left_trigger - gamepad1.right_trigger;
+    myMotor.setPower(power);
+}
+</code></pre>
+<p>This is relatively straightforward. Now, after the program is initialized and the play button is pressed, the <code>act</code> function will run in a loop, so you don't have to worry about the power only being set once.</p>
+<p>The completed code should look like this:</p>
+<pre><code class="language-java">import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+import ftc.electronvolts.util.Function;
+import ftc.electronvolts.util.Functions;
+import ftc.electronvolts.util.files.Logger;
+import ftc.evlib.opmodes.AbstractTeleOp;
+
+@TeleOp(name = &quot;My TeleOp&quot;)
+public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
+
+    DcMotor myMotor;
+
+    @Override
+    protected MyRobotCfg createRobotCfg() {
+        return new MyRobotCfg(hardwareMap);
+    }
+
+    @Override
+    protected Logger createLogger() {
+        return null;
+    }
+
+    @Override
+    protected void setup() {
+        myMotor = robotCfg.getMyMotor();
+    }
+
+    @Override
+    protected void setup_act() {}
+
+    @Override
+    protected void go() {}
+
+    @Override
+    protected void act() {
+        double power = gamepad1.left_trigger - gamepad1.right_trigger;
+        myMotor.setPower(power);
+    }
+
+    @Override
+    protected void end() {}
+
+    @Override
+    protected Function getJoystickScalingFunction() {
+        return Functions.linear(1.0);
+    }
+}
+</code></pre>
+<p>Don't worry about all of those empty methods, we will go into more detail about those in the next chapter.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../intro/ftc_framework.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../starter/config.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../starter/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../starter/install.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -177,10 +265,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../intro/ftc_framework.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../starter/config.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../starter/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../starter/install.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
