@@ -9,6 +9,7 @@
     - [TeleOp Program](./starter/tele_op.md)
     - [Compile and Install](./starter/install.md)
 - [Operation Modes](./opmodes/README.md)
+    - [Base Operation Mode](./opmodes/base.md)
 - [The State Machine](./state_machine/README.md)
 - [Hardware](./hardware/README.md)
 - [Version Control](./vcs/README.md)
