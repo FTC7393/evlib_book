@@ -112,4 +112,4 @@ public class MyRobotCfg extends RobotCfg {
 }
 ```
 
-This is all the code you need to move to the next step. If there is some other types of hardware you'd like to add, check out the [FTC javadoc](https://javadoc.io/doc/org.firstinspires.ftc), or see some more types we've made in the [Hardware section](../../hardware/index.html).
+This is all the code you need to move to the next step. If there are some other types of hardware you'd like to add, find them in the [FTC javadoc](https://javadoc.io/doc/org.firstinspires.ftc), or see some more types we've made in the [Hardware section](../../hardware/index.html).
