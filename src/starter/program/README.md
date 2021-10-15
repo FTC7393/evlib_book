@@ -23,7 +23,7 @@ Then add the ElectronVolts library into the directory like so:
 
 Once you've set up those files, you can start writing FTC code.
 
-The end product should look something like below. Read on to see a quick breakdown of this code.
+The end product should look something like below. This is just for later reference (i.e. when your code stops working), keep reading for the rest of the walkthrough.
 ```java
 MyRobotCfg.java
 
@@ -58,7 +58,6 @@ MyTeleOp.java
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-
 import ftc.electronvolts.util.Function;
 import ftc.electronvolts.util.Functions;
 import ftc.electronvolts.util.files.Logger;
