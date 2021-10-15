@@ -4,7 +4,7 @@ Note: Whenever \*nix is used here, it refers to operating systems which are some
 
 ### Java
 
-*This step can usually be ignored, since most modern operating systems come with a Java installation*
+*This step can sometimes be ignored, since you'll already have Java if another app you have uses it.*
 
 To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to [the Oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. For other \*nix operating systems, follow the distribution-dependent instructions for installing java.
 

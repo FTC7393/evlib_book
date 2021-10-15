@@ -4,7 +4,6 @@
 
 - A tool to make writing FTC code faster
 - A collection of classes containing boilerplate code
-- Stable
 - What this book is trying to get you to use
 
 ## What it isn't:
