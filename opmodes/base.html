@@ -145,22 +145,22 @@
 <p><code>setup_act</code>: After <code>setup</code> has run, this method is run in a loop, which exits when the play button is pressed. This method is guaranteed to not stop before it's gotten to the end, if it started.</p>
 </li>
 <li>
-<p><code>go</code>: This method is run once at the time when the play button is pressed</p>
+<p><code>go</code>: This method is run once at the time when the play button is pressed.</p>
 </li>
 <li>
 <p><code>pre_act</code>: This method is always run before every time <code>act</code> runs.</p>
 </li>
 <li>
-<p><code>act</code>: After <code>go</code> has run, this method is run in a loop until the OpMode is stopped by the Driver Station or by the game timer</p>
+<p><code>act</code>: After <code>go</code> has run, this method is run in a loop until the OpMode is stopped by the Driver Station or by the game time.</p>
 </li>
 <li>
-<p><code>post_act</code>: This method is always run after every time <code>act</code> runs</p>
+<p><code>post_act</code>: This method is always run after every time <code>act</code> runs.</p>
 </li>
 <li>
-<p><code>end</code>: This method is run once after the OpMode is stopped by the Driver Station or by the game timer</p>
+<p><code>end</code>: This method is run once after the OpMode is stopped by the Driver Station or by the game timer.</p>
 </li>
 </ul>
-<p>You usually don't need to deal with all of these directly, such as <code>pre_act</code> and <code>post_act</code>, which are meant for the the creation of custom OpModes. Others, such as <code>setup</code> and <code>act</code>, are usually always given.</p>
+<p>You usually don't need to deal with all of these directly, since those such as <code>pre_act</code> and <code>post_act</code> are meant for the the creation of custom OpModes. Others, such as <code>setup</code> and <code>act</code>, are usually for you to use.</p>
 
                     </main>
 

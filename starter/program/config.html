@@ -136,12 +136,15 @@
                     <main>
                         <h1 id="robot-config"><a class="header" href="#robot-config">Robot Config</a></h1>
 <p>In order to access hardware, the Qualcomm framework provides an object called the <code>hardwareMap</code>, which is helpful to think of as a <code>Map&lt;String, HardwareDevice&gt;</code>. You can access sensors and actuators from this object by calling the method <code>get(Class&lt;? extends T&gt;, String) -&gt; T</code> on it.</p>
-<p>ElectronVolts takes this a step further by making the abstract class <code>RobotCfg</code>, which presents all of the hardware that the robot has by default, by default. By &quot;present&quot;, I mean that if you ask for that hardware (with one of the methods below), it will be given to you.</p>
+<p>ElectronVolts takes this a step further by making the abstract class <code>RobotCfg</code>, which will present all of the hardware that it knows about. By &quot;present&quot;, I mean that you can ask explicitly for the hardware, using one of these functions.</p>
 <p><img src="./config_hardware.png" alt="Hardware presented by default" /></p>
-<p>For example, every FTC compatible phone will have an accelerometer built into itself, and every <code>RobotCfg</code> will also have an accelerometer built into itself. When you have a Robot Config, you can call <code>getAccelerometer() -&gt; Accelerometer</code> on it and work with the accelerometer that way. Like this, we've reduced the amount of arguments you need from two to zero. That might seem small, but little by little, actually sitting down and writing code can become a huge bottleneck. This code will take a bit of that load off the programmer's shoulders.</p>
+<p>(a side note: I call it hardware here, but it's really a reference to the hardware. As in, an object which you can use to change the hardware.)</p>
+<p>For example, every FTC compatible phone will have an accelerometer built into itself, and every <code>RobotCfg</code> will also have an accelerometer built into itself. When you have a Robot Config, you can call <code>getAccelerometer() -&gt; Accelerometer</code> on it and just start using it. Like this, we've reduced the amount of arguments you need from two to zero. That might seem small, but actually sitting down and writing long amounts of code can become a huge bottleneck. This code will take a bit of that load off the programmer's shoulders.</p>
 <p>This is especially important because of the second use for Robot Configs: <em>it decouples the hardware team from the software team</em>. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.</p>
+<p>This also means that this section is great for <em>both hardware and software team</em> to understand.</p>
 <p><strong>The library is still not magic</strong>.</p>
-<p>If you write code that is hard to understand, then putting it all in one place won't make it all that better.</p>
+<p>If you write code that isn't readable, then putting it all in one place won't necessarily make it better.</p>
+<h2 id="code"><a class="header" href="#code">Code</a></h2>
 <p>Start with a Robot Config like so:</p>
 <pre><code class="language-java">MyRobotCfg.java
 
@@ -164,8 +167,8 @@ public class MyRobotCfg extends RobotCfg {
 }
 
 </code></pre>
-<p>Right now, this config represents an empty bot. It has one brain, one phone, and that's it. This is already pretty powerful -- without any custom logic, you have direct access to all the phone's sensors. This is sufficient for an abstract example, but what if we want to add motors to a bot?</p>
-<p>Let's start by adding a simple DC motor to a bot, called &quot;bruh&quot; (keep in mind, this is still not how you would want to do it in practice, but still an example):</p>
+<p>Right now, this config represents an empty bot. It has one brain, one phone, and that's it. This is already pretty powerful – without any custom logic, you have direct access to all the phone's sensors. This is sufficient for an abstract example, but what if we want to add motors to a bot?</p>
+<p>Let's start by adding a simple DC motor to a bot, which on the robot core has been <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/Configuring-Your-Hardware">programmed</a> to be called &quot;bruh&quot;:</p>
 <pre><code class="language-java">public class MyRobotCfg extends RobotCfg {
     public final DcMotor myMotor;
 
@@ -190,6 +193,7 @@ public class MyRobotCfg extends RobotCfg {
     }
 }
 </code></pre>
+<p>Now, when you need the motor, and have a <code>MyRobotCfg</code>, you can call <code>myRobotCfg.getMyMotor()</code> to receive and move the motor.</p>
 <p>The complete code should look like this:</p>
 <pre><code class="language-java">import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -218,7 +222,7 @@ public class MyRobotCfg extends RobotCfg {
     public void stop() {}
 }
 </code></pre>
-<p>This is all the code you need to move to the next step. If there is some other types of hardware you'd like to add, check out the <a href="https://javadoc.io/doc/org.firstinspires.ftc">FTC javadoc</a>, or see some more types we've made in the <a href="../../hardware/index.html">Hardware section</a>.</p>
+<p>This is all the code you need to move to the next step. If there are some other types of hardware you'd like to add, find them in the <a href="https://javadoc.io/doc/org.firstinspires.ftc">FTC javadoc</a>, or see some more types we've made in the <a href="../../hardware/index.html">Hardware section</a>.</p>
 
                     </main>
 
