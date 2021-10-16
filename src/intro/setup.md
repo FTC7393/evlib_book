@@ -1,4 +1,4 @@
-Note: Whenever \*nix is used here, it refers to operating systems which are somehow based off of Unix, such as Linux, BSD, and such (while excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.
+Note: Whenever \*nix is used here, it refers to operating systems which are somehow based off Unix, like Linux, BSD, and such (excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.
 
 # Development Environment
 
@@ -6,7 +6,7 @@ Note: Whenever \*nix is used here, it refers to operating systems which are some
 
 *This step can sometimes be ignored, since you'll already have Java if another app you have uses it.*
 
-To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to [the Oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. For other \*nix operating systems, follow the distribution-dependent instructions for installing java.
+To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. Windows or MacOS users should go to [the Oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. \*nix users should follow the distribution-dependent instructions for installing java.
 
 ### Android Studio
 
@@ -14,9 +14,9 @@ To start, you must first have Java installed. Java 8 or 11 should work, and if y
 
 *(Andrew Hunt and David Thomas, The Pragmatic Programmer)*
 
-Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relevant integration for FTC is donwloading code onto android devices.
+Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as code formatting or version control toolbar (TODO: Link this to version control page). The most relevant integration for FTC is donwloading programs onto Android devices.
 
-To install Android Studio for Windows or MacOS computers, go to [the Android Studio site](https://developer.android.com/studio/) and follow the installation instructions for your OS. For \*nix operating systems, follow the distribution-dependent instructions for installing Android Studio.
+To install Android Studio for Windows or MacOS computers, go to the [Android Studio](https://developer.android.com/studio/) site and follow the installation instructions for your OS. \*nix users should follow the distribution-dependent instructions for installing Android Studio.
 
 You should definitely spend some time customizing and familiarizing yourself with Android Studio.
 
@@ -24,7 +24,7 @@ You should definitely spend some time customizing and familiarizing yourself wit
 
 ### FTC Framework
 
-Your entire project is based off the FTC framework. To begin a new FTC project, copy all of the code from [the FTC repository](https://github.com/FIRST-Tech-Challenge/FtcRobotController) into your own project. You can do this by clicking the "Code" button, then clicking "Download ZIP", as shown.
+Your entire project is based off the Qualcomm framework. To begin a new FTC project, copy all of the code from [the FTC repository](https://github.com/FIRST-Tech-Challenge/FtcRobotController) into your own project. You can do this by clicking the "Code" button, then clicking "Download ZIP", as shown.
 
 ![Download from Github](./setup_github_download.png)
 

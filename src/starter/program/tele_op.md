@@ -110,5 +110,3 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     }
 }
 ```
-
-Don't worry about all of those empty methods, we will go into more detail about those in the next chapter.

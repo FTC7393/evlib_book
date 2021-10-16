@@ -1,16 +1,14 @@
 # Robot Config
 
-In order to access hardware, the Qualcomm framework provides an object called the `hardwareMap`, which is helpful to think of as a `Map<String, HardwareDevice>`. You can access sensors and actuators from this object by calling the method `get(Class<? extends T>, String) -> T` on it.
+In order to access hardware, the Qualcomm framework provides an object called the `hardwareMap`, which is something like a TypeMap, except each type also has its own map between `String` and the hardware you want.
 
-ElectronVolts takes this a step further by making the abstract class `RobotCfg`, which will present all of the hardware that it knows about. By "present", I mean that you can ask explicitly for the hardware, using one of these functions.
+ElectronVolts takes this a step further by making the abstract class `RobotCfg`, which can be used to preload all of the names out of the `hardwareMap` and let you get it directly.
 
 ![Hardware presented by default](./config_hardware.png)
 
-(a side note: I call it hardware here, but it's really a reference to the hardware. As in, an object which you can use to change the hardware.)
+(a side note: I call it hardware here, but it's really a reference to the hardware. As in, an object which you can use to control the hardware.)
 
-For example, every FTC compatible phone will have an accelerometer built into itself, and every `RobotCfg` will also have an accelerometer built into itself. When you have a Robot Config, you can call `getAccelerometer() -> Accelerometer` on it and just start using it. Like this, we've reduced the amount of arguments you need from two to zero. That might seem small, but actually sitting down and writing long amounts of code can become a huge bottleneck. This code will take a bit of that load off the programmer's shoulders.
-
-This is especially important because of the second use for Robot Configs: *it decouples the hardware team from the software team*. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.
+Importantly, Robot Configs *decouple the hardware team from the software team*. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.
 
 This also means that this section is great for *both hardware and software team* to understand.
 
@@ -79,7 +77,7 @@ public class MyRobotCfg extends RobotCfg {
 }
 ```
 
-Now, when you need the motor, and have a `MyRobotCfg`, you can call `myRobotCfg.getMyMotor()` to receive and move the motor.
+Now, when the software team needs the motor, and has a `MyRobotCfg`, they can call `myRobotCfg.getMyMotor()` to receive and move the motor.
 
 The complete code should look like this:
 
