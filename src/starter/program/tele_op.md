@@ -1,6 +1,6 @@
 # TeleOp Program
 
-If you haven't done FTC before, a TeleOp is Tele-Operation: A period of time when *you*, the human, control the robot. A TeleOp therefore needs take input from a source (in 2021, an xbox controller), and somehow transform it into actions done by the robot. That's the part you make.
+A TeleOp is Tele-Operation: A period of time when *you*, the human, control the robot. A TeleOp therefore needs take input from a source (in 2021, an xbox controller), and somehow transform it into actions done by the robot. That's the part you make.
 
 Let's get right into it, with the following starter code:
 ```java
@@ -40,26 +40,9 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
 }
 ```
 
-This is a *lot* of code, and we'll break it down more in the next chapter. For now, focus on the methods `setup() -> void` and `act() -> void`.
+This is a *lot* of methods, and we'll break it down more in the chapter 3. For now, we'll set the goal of moving the motor counterclockwise with the left trigger of the controller, and clockwise with the right trigger.
 
-For now, we'll set the goal of moving the motor counterclockwise when hitting the left trigger of the controller, and clockwise on hitting the right trigger.
-
-Let's start with the setup part of the program. You might want to import `myMotor` into this class to be able to use it easily, like this:
-
-```java
-public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
-    DcMotor myMotor;
-
-    @Override
-    protected void setup() {
-        myMotor = robotCfg.getMyMotor();
-    }
-}
-```
-
-You can do this even if you're not using the getter pattern. This code tells the program to save a reference to the DcMotor on init. This step isn't necessary, and later this code might be bad. It saves some work if you want to write slightly less though.
-
-The next step is to actually do something with the motor. For now, let's compute the power the motor should be moved with.
+To start, we need to figure out how much the motor should move. To do this, we'll need to transform the input from the controller into an output for the motor to be able to use.
 
 ```java
 protected void act() {
@@ -72,7 +55,7 @@ You can see that `gamepad1.left_trigger` is not a reference to hardware, but a v
 ```java
 protected void act() {
     double power = gamepad1.left_trigger - gamepad1.right_trigger;
-    myMotor.setPower(power);
+    robotCfg.getMyMotor().setPower(power);
 }
 ```
 
@@ -104,9 +87,7 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     }
 
     @Override
-    protected void setup() {
-        myMotor = robotCfg.getMyMotor();
-    }
+    protected void setup() {}
 
     @Override
     protected void setup_act() {}
@@ -117,7 +98,7 @@ public class MyTeleOp extends AbstractTeleOp<MyRobotCfg> {
     @Override
     protected void act() {
         double power = gamepad1.left_trigger - gamepad1.right_trigger;
-        myMotor.setPower(power);
+        robotCfg.getMyMotor().setPower(power);
     }
 
     @Override
