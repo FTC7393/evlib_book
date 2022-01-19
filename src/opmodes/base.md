@@ -4,7 +4,7 @@ The class `evlib.opmodes.AbstractOp` represents the most basic OpMode used by El
 
 Here are the seven runtime stages, in order:
 - `setup`: This method is run once when the init button is pressed.
-- `setup_act`: After `setup` has run, this method is run in a loop, which exits when the play button is pressed. This method is guaranteed to not stop before it's gotten to the end, if it started.
+- `setup_act`: After `setup` has run, this method is run in a loop, which exits when the play button is pressed. This method is guaranteed to not stop before it completes.
 - `go`: This method is run once at the time when the play button is pressed.
 
 - `pre_act`: This method is always run before every time `act` runs.
