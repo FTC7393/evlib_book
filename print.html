@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Version Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Metaprogramming</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Logger</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Setting Options</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Dependencies</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Version Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Metaprogramming</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Logger</div></li><li class="chapter-item expanded "><a href="metaprogramming/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Dependencies</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -537,7 +537,7 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
 <p><code>setup</code>: This method is run once when the init button is pressed.</p>
 </li>
 <li>
-<p><code>setup_act</code>: After <code>setup</code> has run, this method is run in a loop, which exits when the play button is pressed. This method is guaranteed to not stop before it's gotten to the end, if it started.</p>
+<p><code>setup_act</code>: After <code>setup</code> has run, this method is run in a loop, which exits when the play button is pressed. This method is guaranteed to not stop before it completes.</p>
 </li>
 <li>
 <p><code>go</code>: This method is run once at the time when the play button is pressed.</p>
@@ -556,6 +556,137 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
 </li>
 </ul>
 <p>You usually don't need to deal with all of these directly, since those such as <code>pre_act</code> and <code>post_act</code> are meant for the the creation of custom OpModes. Others, such as <code>setup</code> and <code>act</code>, are usually for you to use.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="options"><a class="header" href="#options">Options</a></h1>
+<p>The unfortunate part about programming for the FTC robot is that to test code, you must build, download, then run; for large codebases this is often a slow process. Sometimes, there will be numbers which are not necessarily fixed, and rebuilding just before every competition and match is infeasible.</p>
+<p>This collection of classes gives you a dynamic solution to this problem:</p>
+<ul>
+<li><code>ftc.evlib.opmodes.AbstractOptionsOp</code></li>
+<li><code>ftc.evlib.util.FileUtil</code></li>
+<li><code>ftc.electronvolts.util.OptionsFile</code></li>
+<li><code>ftc.electronvolts.util.OptionEntry</code></li>
+</ul>
+<p>These classes allow you to set variables by running an <code>AbstractOptionsOp</code>, then access them later in an unrelated Opmode.</p>
+<blockquote>
+<p>NOTE: Option setting is an <strong>opt-in</strong> feature. An opmode for setting options is not included.</p>
+</blockquote>
+<h2 id="interface"><a class="header" href="#interface">Interface</a></h2>
+<p>You'll probably want to orient your driver hub to be landscape to use the interface</p>
+<blockquote>
+<p>TODO: Add picture of driver hub</p>
+</blockquote>
+<p>The table on the right shows a list of option names and their current values.</p>
+<ul>
+<li>To select an option, press dpad-up or dpad-down (navigate up or down) until you reach it (the arrows are on either side of the option).</li>
+<li>For discrete variables (e.g. integers), press the left/right bumpers to modify their values (this change will be reflected on the telemetry log).</li>
+<li>For approximate continuous variables (e.g. floating-points), press the left/right triggers.
+<ul>
+<li>The depth of the trigger press will be reflected in the rate at which the option is modified (the heavier the touch, the more the variable goes up).</li>
+</ul>
+</li>
+<li>To save the options, press the start button
+<ul>
+<li><strong>The options will not save when the opmode finishes</strong></li>
+</ul>
+</li>
+<li>To clear changes to the last save, press the reset button
+<ul>
+<li><strong>This will irrevocably remove all changes that are not saved</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="defining-variables"><a class="header" href="#defining-variables">Defining Variables</a></h2>
+<p>You'll first want to set up two classes: An OpMode extending <code>AbstractOptionsOp</code> and an enum class implementing <code>OptionEntry</code>. Here is an example:</p>
+<pre><code class="language-java">// ExampleOptions.java
+
+import ftc.electronvolts.util.OptionEntry;
+
+public enum ExampleOptions implements OptionEntry {
+
+    TypeData&lt;?&gt; data;
+
+    @Override
+    public TypeData&lt;?&gt; getData {
+        return data;
+    }
+
+    ExampleOptions(TypeDataBuilder&lt;?&gt; t) {
+        data = t.build();
+    }
+
+}
+
+// ExampleOptionsOp.java
+
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import ftc.evlib.opmodes.AbstractOptionsOp;
+
+@TeleOp(name = &quot;Example Options Op&quot;)
+public class ExampleOptionsOp extends AbstractOptionsOp {
+    @Override
+    protected void setImplementationSpecificDetails() {
+
+        filename = &quot;example_options.json&quot;;
+        options = ExampleOptions.class;
+
+    }
+}
+</code></pre>
+<p>These classes would run fine by themselves, but if you try running &quot;Example Options Op&quot; you would see nothing. To create options, you would have to define an entry in <code>ExampleOptions</code>. Let's define one that is heavily suited for this task: The alliance color. It's one you'll only know on the field, and will not necessarily have the time to set.</p>
+<p>Let's say that you represent your alliance color like so:</p>
+<pre><code class="language-java">// AllianceColor.java
+
+public enum AllianceColor {
+    RED,
+    BLUE,
+}
+</code></pre>
+<p>We'll define an option with these properties:</p>
+<ul>
+<li>It is called <code>ALLIANCE_COLOR</code></li>
+<li>It stores the <code>AllianceColor</code> enum</li>
+<li>We somehow tipped off the judge, so we're expecting it to mostly be red</li>
+</ul>
+<p>Here is the full definition:</p>
+<pre><code class="language-java">ALLIANCE_COLOR(TypeDataBuilder
+    .enumType(AllianceColor.class)
+    .withFallback(AllianceColor.RED)
+)
+</code></pre>
+<p>Here it is inserted into <code>ExampleOptions</code>:</p>
+<pre><code class="language-java">public enum ExampleOptions implements OptionEntry {
+
+    ALLIANCE_COLOR(TypeDataBuilder
+        .enumType(AllianceColor.class)
+        .withFallback(AllianceColor.RED)
+    )
+
+    TypeData&lt;?&gt; data;
+
+    @Override
+    public TypeData&lt;?&gt; getData {
+        return data;
+    }
+
+    ExampleOptions(TypeDataBuilder&lt;?&gt; t) {
+        data = t.build();
+    }
+
+}
+</code></pre>
+<p>Now if you run &quot;Example Options Op&quot; again, it will show this one option, which you can now change using the bumpers on your controller. Adding more options is as easy as adding more enum variants.</p>
+<blockquote>
+<p>TODO: add an image</p>
+</blockquote>
+<h2 id="fetching-options"><a class="header" href="#fetching-options">Fetching Options</a></h2>
+<p>After you have set these options, you can programatically access them using the <code>OptionsFile</code> class. Admittedly this is not an easy thing to do, and will be the next thing to improve about the option framework.</p>
+<p>To get the object containing the options, use:</p>
+<pre><code class="language-java">OptionsFile file = new OptionsFile(FileUtil.getOptionsFile(&quot;example_options.json&quot;));
+</code></pre>
+<p>The string <code>&quot;example_options.json&quot;</code> comes from the <code>ExampleOptionsOp</code> defined before.</p>
+<p>To get out the <code>AllianceColor</code>, access the object like so:</p>
+<pre><code class="language-java">AllianceColor color = (AllianceColor) file.load(ExampleOptions.ALLIANCE_COLOR);
+</code></pre>
+<p>The cast is necessary, without it you will have a compile error.</p>
 
                     </main>
 
