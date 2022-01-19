@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><a href="state_machine/index.html"><strong aria-hidden="true">4.</strong> The State Machine</a></li><li class="chapter-item expanded "><a href="hardware/index.html"><strong aria-hidden="true">5.</strong> Hardware</a></li><li class="chapter-item expanded "><a href="vcs/index.html"><strong aria-hidden="true">6.</strong> Version Control</a></li><li class="chapter-item expanded "><a href="meta/index.html"><strong aria-hidden="true">7.</strong> Metaprogramming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="meta/logger.html"><strong aria-hidden="true">7.1.</strong> Logger</a></li><li class="chapter-item expanded "><a href="meta/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="deps/index.html"><strong aria-hidden="true">8.</strong> Dependencies</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Version Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Metaprogramming</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Logger</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.2.</strong> Setting Options</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Dependencies</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,25 +136,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="intro"><a class="header" href="#intro">Intro</a></h1>
-<p>Building FTC code has been, in my experience, a huge pain. Fortunately, you don't have to build it all yourself. A large source of difficulty in writing code is repetition (think functions with 10 parameters that you have to call fifty times).</p>
-<p>This tutorial teaches two different libraries together: The Qualcomm provided framework, and the frontend used by Team 7393 (which exists itself on top of the Qualcomm library). It is intended for those who don't want to be limited by block-based programming anymore, or are just getting started.</p>
-<p><strong>Keep in mind</strong>, this book is not meant to teach how to do text-based programming. It also isn't meant to be a primer on hardware and configuration in general, which can be found on the FTC <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki">github docs</a>. It is only meant to teach these libraries. Basically, if you don't know any, you should go study up on java. Alternatively, if you've already know a curly brace/c-like language, then it might work out for you to just wing it.</p>
-<div style="break-before: page; page-break-before: always;"></div><p>Note: Whenever *nix is used here, it refers to operating systems which are somehow based off of Unix, such as Linux, BSD, and such (while excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.</p>
+<p>Building working, successful, and long-lasting code is hard. Moving requirements and new features basically make every year a surgical process, carefully transposing what code warks and cutting off what doesn't. Fortunately for FTC programmers, libraries are here to provide some stability and a more reasonable starting point.</p>
+<p>This tutorial teaches two libraries together: The Qualcomm framework that all FTC teams are <em>required</em> to use, and the ElectronVolts library written by Team 7393, a step above the Qualcomm framework. However, this tutorial leans heavily into the ElectronVolts library, so if you don't want to use that, this tutorial isn't for you.</p>
+<p>This book is <em>not</em> meant to teach how to do text-based programming. It also isn't meant to be a primer on how to use the robot apps; that can be found on the FTC <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki">github wiki</a>. Basically, if you don't know any, you should go study up on Java. Alternatively, if you've already know a curly-brace/c-like language, then it might work out for you to just wing it.</p>
+<div style="break-before: page; page-break-before: always;"></div><p>Note: Whenever *nix is used here, it refers to operating systems which are somehow based off Unix, like Linux, BSD, and such (excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.</p>
 <h1 id="development-environment"><a class="header" href="#development-environment">Development Environment</a></h1>
 <h3 id="java"><a class="header" href="#java">Java</a></h3>
 <p><em>This step can sometimes be ignored, since you'll already have Java if another app you have uses it.</em></p>
-<p>To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. For Windows or MacOS computers, go to <a href="https://www.oracle.com/java/technologies/downloads/">the Oracle site</a> and follow the installation instructions for your OS. For other *nix operating systems, follow the distribution-dependent instructions for installing java.</p>
+<p>To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. Windows or MacOS users should go to <a href="https://www.oracle.com/java/technologies/downloads/">the Oracle site</a> and follow the installation instructions for your OS. *nix users should follow the distribution-dependent instructions for installing java.</p>
 <h3 id="android-studio"><a class="header" href="#android-studio">Android Studio</a></h3>
 <blockquote>
 <p>The editor will be an extension of your hand; the keys will sing as they slice their way through text and thought.</p>
 </blockquote>
 <p><em>(Andrew Hunt and David Thomas, The Pragmatic Programmer)</em></p>
-<p>Android Studio is an &quot;IDE&quot;, or Integrated Development Environment. It serves the same purpose as a text editor, but has &quot;Integrations&quot;, such as automatically formatting code and working with version control (TODO: Link this to version control page). The most relevant integration for FTC is donwloading code onto android devices.</p>
-<p>To install Android Studio for Windows or MacOS computers, go to <a href="https://developer.android.com/studio/">the Android Studio site</a> and follow the installation instructions for your OS. For *nix operating systems, follow the distribution-dependent instructions for installing Android Studio.</p>
+<p>Android Studio is an &quot;IDE&quot;, or Integrated Development Environment. It serves the same purpose as a text editor, but has &quot;Integrations&quot;, such as code formatting or version control toolbar (TODO: Link this to version control page). The most relevant integration for FTC is donwloading programs onto Android devices.</p>
+<p>To install Android Studio for Windows or MacOS computers, go to the <a href="https://developer.android.com/studio/">Android Studio</a> site and follow the installation instructions for your OS. *nix users should follow the distribution-dependent instructions for installing Android Studio.</p>
 <p>You should definitely spend some time customizing and familiarizing yourself with Android Studio.</p>
 <h1 id="project-setup"><a class="header" href="#project-setup">Project Setup</a></h1>
 <h3 id="ftc-framework"><a class="header" href="#ftc-framework">FTC Framework</a></h3>
-<p>Your entire project is based off the FTC framework. To begin a new FTC project, copy all of the code from <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">the FTC repository</a> into your own project. You can do this by clicking the &quot;Code&quot; button, then clicking &quot;Download ZIP&quot;, as shown.</p>
+<p>Your entire project is based off the Qualcomm framework. To begin a new FTC project, copy all of the code from <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController">the FTC repository</a> into your own project. You can do this by clicking the &quot;Code&quot; button, then clicking &quot;Download ZIP&quot;, as shown.</p>
 <p><img src="intro/./setup_github_download.png" alt="Download from Github" /></p>
 <p>It is better, though, to use Version Control to do this. This is discussed more in the Version Control section (TODO!!).</p>
 <p>You can then start writing your code in (<strong>and only in</strong>) the <code>TeamCode/src/main/java</code> directory.</p>
@@ -164,10 +164,9 @@
 <p>The latest version of the ElectronVolts library does not exist, as of yet, in its own repository. You can find a copy of it on the <a href="intro/www.example.com">ElectronVolts github page</a>, on the current year's repository and branch, in <code>TeamCode/src/main/java/ftc</code>. For example, during the 2021-2022 season, it was in <a href="https://github.com/FTC7393/FtcRobotController">FtcRobotController</a>, on branch <a href="https://github.com/FTC7393/FtcRobotController/tree/Season2021">Season2021</a>. Copy all the files in that directory to anywhere within your project's working folder.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="how-the-robot-works"><a class="header" href="#how-the-robot-works">How the robot works</a></h2>
 <p>This part is review for those who've already done FTC.</p>
-<p>In summary, the FTC robot core communicates over direct wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read about it on the <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System">FTC docs page</a>.</p>
-<p>It is important to note that the program installed on the Robot Controller runs <em>instantly</em>. You'll see why this is important in the next section.</p>
+<p>The REV robotics core communicates over wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read about it on the <a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System">FTC docs page</a>.</p>
 <h2 id="ftc-framework-1"><a class="header" href="#ftc-framework-1">FTC Framework</a></h2>
-<p>The software on the phone which communicates with the robot is constant. However, the code on the robot is dependent on you. Even so, there's a certain way that your program has to move motors, read from sensors, and communicate with the app on the phone. This is why, when writing your FTC program, you must do it within a framework.</p>
+<p>The software on the phone is always the same; the code on the robot is what you control. Even so, there's a certain way your program must act. This is why, when writing your FTC program, you must do it within a framework.</p>
 <p>For example, a wrong way to write FTC code:</p>
 <pre><code class="language-java">import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -188,7 +187,7 @@ public class FooOp {
 <p>There are a few things wrong with this.</p>
 <ul>
 <li>The <code>hardwareMap</code> does not even exist, so you can't control any hardware.</li>
-<li>The <code>main</code> method here will not be run at all -- remember, the FTC bot runs the program instantly, so it has to do some steps before it can run your code (aka run its own main function).</li>
+<li>The <code>main</code> method here will not be run at all -- Qualcomm has their own <code>main</code> code, so yours will not be run.</li>
 <li>The <code>@Autonomous</code> annotation is wrong -- this class is not an &quot;Operation Mode&quot;, which is what the framework is expecting. This will probably result in some strange runtime error (TODO: Add a picture of that runtime error).</li>
 </ul>
 <p>Here is a correct implementation:</p>
@@ -214,23 +213,22 @@ public class FooOp extends LinearOpMode {
 </code></pre>
 <p>All the problems in the previous code have been corrected here:</p>
 <ul>
-<li>The <code>hardwareMap</code> now exists: It exists in the superclasses of <code>FooOp</code></li>
-<li>The <code>@Autonomous</code> annotation now makes sense: It is annotating a class which is a Linear Operation Mode. Furthermore, that means when you download this program, you can use your driver station (or phone) to select and run your code.</li>
+<li>The <code>hardwareMap</code> now exists: It exists in the superclasses of <code>FooOp</code>.</li>
+<li>The <code>@Autonomous</code> annotation now makes sense: It is annotating a class which is a Linear Operation Mode. The Qualcomm framework can now correctly detect and run it.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-electronvolts-library"><a class="header" href="#the-electronvolts-library">The ElectronVolts Library</a></h1>
-<h2 id="what-it-is"><a class="header" href="#what-it-is">What it is:</a></h2>
+<h4 id="what-it-is"><a class="header" href="#what-it-is">What it is:</a></h4>
 <ul>
-<li>A tool to make writing FTC code faster</li>
-<li>A collection of classes containing boilerplate code</li>
+<li>A tool for writing FTC code faster</li>
+<li>Classes containing boilerplate code</li>
 <li>What this book is trying to get you to use</li>
 </ul>
-<h2 id="what-it-isnt"><a class="header" href="#what-it-isnt">What it isn't:</a></h2>
+<h4 id="what-it-isnt"><a class="header" href="#what-it-isnt">What it isn't:</a></h4>
 <ul>
 <li>Magic</li>
 <li>Required</li>
 </ul>
-<p>The ElectronVolts library contains a lot of helpful stuff, but only if it is used correctly. It's a layer of abstraction on top of the Qualcomm framework, allowing you to write your code in a stable way.</p>
-<p>However, learning <em>yet another</em> layer of abstraction is pretty difficult, and if the FTC library suits your purposes, it's what you should stick with. But if you struggle with these problems:</p>
+<p>The ElectronVolts library is some code on top of the Qualcomm framework, allowing you to write your code in a stable way. However, learning <em>yet another</em> library is pretty difficult, and if the FTC library suits your purposes, it's what you should stick with. Evlib contains helpful stuff, but it only helps if used correctly. But if you struggle with these problems:</p>
 <ul>
 <li>Value fudging</li>
 <li>Untraceable logic</li>
@@ -238,9 +236,9 @@ public class FooOp extends LinearOpMode {
 <li>Insanity</li>
 </ul>
 <p>TODO: Add concrete example of a problem</p>
-<p>Maybe this library is a good fit for you. If it isn't, then you might want to stop here and read the FTC provided documentation instead.</p>
+<p>Maybe this library is a good fit for you. If you find it isn't, then you should stop and read the FTC provided documentation instead.</p>
 <h2 id="library-structure"><a class="header" href="#library-structure">Library Structure</a></h2>
-<p>The library is split up into two parts: <code>electronvolts</code> and <code>evlib</code>. The <code>electronvolts</code> code consists of helper classes which are used to make <code>evlib</code>, which is the part of the library you will probably be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.</p>
+<p>The library is split up into two parts: <code>electronvolts</code> and <code>evlib</code>. The <code>electronvolts</code> code consists of helper classes which are used to make <code>evlib</code>, which is the part of the library you will be using most often. Regardless of what you use, you will need to download both and put them inside the same directory.</p>
 <p>In the previous tutorial, you saw the <code>LinearOpMode</code>. There are many others that Qualcomm provides, and can be used along with the ElectronVolts library, but the ElectronVolts library contains its own, preferred Operation Modes, which you will see in the next chapter.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="a-starter-program"><a class="header" href="#a-starter-program">A Starter Program</a></h1>
 <p>To start an ElectronVolts <code>TeleOp</code> project, make a new copy of the Qualcomm framework and add this into your TeamCode directory:</p>
@@ -259,7 +257,7 @@ public class FooOp extends LinearOpMode {
      ┆   └┄┄
 </code></pre>
 <p>Once you've set up those files, you can start writing FTC code.</p>
-<p>The end product should look something like below. This is just for later reference (i.e. when your code stops working), keep reading for the rest of the walkthrough.</p>
+<p>The end product should look something like below. This is just for later reference (i.e. when your code stops working); keep reading for the rest of the walkthrough.</p>
 <pre><code class="language-java">MyRobotCfg.java
 
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -339,12 +337,11 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="robot-config"><a class="header" href="#robot-config">Robot Config</a></h1>
-<p>In order to access hardware, the Qualcomm framework provides an object called the <code>hardwareMap</code>, which is helpful to think of as a <code>Map&lt;String, HardwareDevice&gt;</code>. You can access sensors and actuators from this object by calling the method <code>get(Class&lt;? extends T&gt;, String) -&gt; T</code> on it.</p>
-<p>ElectronVolts takes this a step further by making the abstract class <code>RobotCfg</code>, which will present all of the hardware that it knows about. By &quot;present&quot;, I mean that you can ask explicitly for the hardware, using one of these functions.</p>
+<p>In order to access hardware, the Qualcomm framework provides an object called the <code>hardwareMap</code>, which is something like a TypeMap, except each type also has its own map between <code>String</code> and the hardware you want.</p>
+<p>ElectronVolts takes this a step further by making the abstract class <code>RobotCfg</code>, which can be used to preload all of the names out of the <code>hardwareMap</code> and let you get it directly.</p>
 <p><img src="starter/program/./config_hardware.png" alt="Hardware presented by default" /></p>
-<p>(a side note: I call it hardware here, but it's really a reference to the hardware. As in, an object which you can use to change the hardware.)</p>
-<p>For example, every FTC compatible phone will have an accelerometer built into itself, and every <code>RobotCfg</code> will also have an accelerometer built into itself. When you have a Robot Config, you can call <code>getAccelerometer() -&gt; Accelerometer</code> on it and just start using it. Like this, we've reduced the amount of arguments you need from two to zero. That might seem small, but actually sitting down and writing long amounts of code can become a huge bottleneck. This code will take a bit of that load off the programmer's shoulders.</p>
-<p>This is especially important because of the second use for Robot Configs: <em>it decouples the hardware team from the software team</em>. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.</p>
+<p>(a side note: I call it hardware here, but it's really a reference to the hardware. As in, an object which you can use to control the hardware.)</p>
+<p>Importantly, Robot Configs <em>decouple the hardware team from the software team</em>. When the hardware team connects a device to the Robot's brain, that change needs to be reflected in the code. If the hardware specification and the software logic are in the same place, it makes it hard for both teams to read and write. With the Robot Config, the hardware team can declare in one place what hardware they are using in their robot, and the software team only has to read from one place to figure out what hardware is being used.</p>
 <p>This also means that this section is great for <em>both hardware and software team</em> to understand.</p>
 <p><strong>The library is still not magic</strong>.</p>
 <p>If you write code that isn't readable, then putting it all in one place won't necessarily make it better.</p>
@@ -397,7 +394,7 @@ public class MyRobotCfg extends RobotCfg {
     }
 }
 </code></pre>
-<p>Now, when you need the motor, and have a <code>MyRobotCfg</code>, you can call <code>myRobotCfg.getMyMotor()</code> to receive and move the motor.</p>
+<p>Now, when the software team needs the motor, and has a <code>MyRobotCfg</code>, they can call <code>myRobotCfg.getMyMotor()</code> to receive and move the motor.</p>
 <p>The complete code should look like this:</p>
 <pre><code class="language-java">import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -428,7 +425,7 @@ public class MyRobotCfg extends RobotCfg {
 </code></pre>
 <p>This is all the code you need to move to the next step. If there are some other types of hardware you'd like to add, find them in the <a href="https://javadoc.io/doc/org.firstinspires.ftc">FTC javadoc</a>, or see some more types we've made in the <a href="starter/program/../../hardware/index.html">Hardware section</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="teleop-program"><a class="header" href="#teleop-program">TeleOp Program</a></h1>
-<p>If you haven't done FTC before, a TeleOp is Tele-Operation: A period of time when <em>you</em>, the human, control the robot. A TeleOp therefore needs take input from a source (in 2021, an xbox controller), and somehow transform it into actions done by the robot. That's the part you make.</p>
+<p>A TeleOp is Tele-Operation: A period of time when <em>you</em>, the human, control the robot. A TeleOp therefore needs take input from a source (in 2021, an xbox controller), and somehow transform it into actions done by the robot. That's the part you make.</p>
 <p>Let's get right into it, with the following starter code:</p>
 <pre><code class="language-java">MyTeleOp.java
 
@@ -465,20 +462,8 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
     }
 }
 </code></pre>
-<p>This is a <em>lot</em> of code, and we'll break it down more in the next chapter. For now, focus on the methods <code>setup() -&gt; void</code> and <code>act() -&gt; void</code>.</p>
-<p>For now, we'll set the goal of moving the motor counterclockwise when hitting the left trigger of the controller, and clockwise on hitting the right trigger.</p>
-<p>Let's start with the setup part of the program. You might want to import <code>myMotor</code> into this class to be able to use it easily, like this:</p>
-<pre><code class="language-java">public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
-    DcMotor myMotor;
-
-    @Override
-    protected void setup() {
-        myMotor = robotCfg.getMyMotor();
-    }
-}
-</code></pre>
-<p>You can do this even if you're not using the getter pattern. This code tells the program to save a reference to the DcMotor on init. This step isn't necessary, and later this code might be bad. It saves some work if you want to write slightly less though.</p>
-<p>The next step is to actually do something with the motor. For now, let's compute the power the motor should be moved with.</p>
+<p>This is a <em>lot</em> of methods, and we'll break it down more in the chapter 3. For now, we'll set the goal of moving the motor counterclockwise with the left trigger of the controller, and clockwise with the right trigger.</p>
+<p>To start, we need to figure out how much the motor should move. To do this, we'll need to transform the input from the controller into an output for the motor to be able to use.</p>
 <pre><code class="language-java">protected void act() {
     double power = gamepad1.left_trigger - gamepad1.right_trigger;
 }
@@ -486,7 +471,7 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
 <p>You can see that <code>gamepad1.left_trigger</code> is not a reference to hardware, but a value. This is another one of the ElectronVolts library's simplifications: Managing the input values. Next, we want to send this computed value to the DC motor.</p>
 <pre><code class="language-java">protected void act() {
     double power = gamepad1.left_trigger - gamepad1.right_trigger;
-    myMotor.setPower(power);
+    robotCfg.getMyMotor().setPower(power);
 }
 </code></pre>
 <p>This is relatively straightforward. Now, after the program is initialized and the play button is pressed, the <code>act</code> function will run in a loop, so you don't have to worry about the power only being set once.</p>
@@ -515,9 +500,7 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
     }
 
     @Override
-    protected void setup() {
-        myMotor = robotCfg.getMyMotor();
-    }
+    protected void setup() {}
 
     @Override
     protected void setup_act() {}
@@ -528,7 +511,7 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
     @Override
     protected void act() {
         double power = gamepad1.left_trigger - gamepad1.right_trigger;
-        myMotor.setPower(power);
+        robotCfg.getMyMotor().setPower(power);
     }
 
     @Override
@@ -540,10 +523,9 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
     }
 }
 </code></pre>
-<p>Don't worry about all of those empty methods, we will go into more detail about those in the next chapter.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="compile-and-install"><a class="header" href="#compile-and-install">Compile and Install</a></h1>
 <p><img src="starter/program/./install_buttons.png" alt="Android Studio buttons" /></p>
-<p>When using Android Studio normally, the box highlighted here will sometimes look like this. The hammer icon on the left is a button that triggers a &quot;build&quot; - it compiles the code you've written using a tool called Gradle. The play button on the right triggers a &quot;deploy&quot; - it compiles your code, but also copies the compiled code into the robot, if it's connected by USB.</p>
+<p>When using Android Studio normally, the box highlighted here will look like this. The hammer icon on the left is the &quot;build&quot; button - it compiles the code you've written using a tool called Gradle. The play button on the right triggers a &quot;deploy&quot; - it compiles your code, but also copies the compiled code into the robot, if it's connected by USB.</p>
 <p>To download your code onto the REV robotics core, you must first have a USB connection between the core and the computer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="operation-modes"><a class="header" href="#operation-modes">Operation Modes</a></h1>
 <p>Operation Modes are the entry point for your code.</p>
@@ -574,13 +556,6 @@ public class MyTeleOp extends AbstractTeleOp&lt;MyRobotCfg&gt; {
 </li>
 </ul>
 <p>You usually don't need to deal with all of these directly, since those such as <code>pre_act</code> and <code>post_act</code> are meant for the the creation of custom OpModes. Others, such as <code>setup</code> and <code>act</code>, are usually for you to use.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="the-state-machine"><a class="header" href="#the-state-machine">The State Machine</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="hardware"><a class="header" href="#hardware">Hardware</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="version-control"><a class="header" href="#version-control">Version Control</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="metaprogramming"><a class="header" href="#metaprogramming">Metaprogramming</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="logger"><a class="header" href="#logger">Logger</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="setting-options"><a class="header" href="#setting-options">Setting Options</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h1>
 
                     </main>
 
