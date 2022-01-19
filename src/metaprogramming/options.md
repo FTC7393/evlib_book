@@ -4,6 +4,7 @@ The unfortunate part about programming for the FTC robot is that to test code, y
 
 This collection of classes gives you a dynamic solution to this problem:
 * `ftc.evlib.opmodes.AbstractOptionsOp`
+* `ftc.evlib.util.FileUtil`
 * `ftc.electronvolts.util.OptionsFile`
 * `ftc.electronvolts.util.OptionEntry`
 
@@ -123,3 +124,17 @@ Now if you run "Example Options Op" again, it will show this one option, which y
 >TODO: add an image
 
 ## Fetching Options
+
+After you have set these options, you can programatically access them using the `OptionsFile` class. Admittedly this is not an easy thing to do, and will be the next thing to improve about the option framework.
+
+To get the object containing the options, use:
+```java
+OptionsFile file = new OptionsFile(FileUtil.getOptionsFile("example_options.json"));
+```
+The string `"example_options.json"` comes from the `ExampleOptionsOp` defined before.
+
+To get out the `AllianceColor`, access the object like so:
+```java
+AllianceColor color = (AllianceColor) file.load(ExampleOptions.ALLIANCE_COLOR);
+```
+The cast is necessary, without it you will have a compile error.
