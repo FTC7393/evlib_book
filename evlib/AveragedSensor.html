@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>averaging analog sensors - FTC Programming with ElectronVolts</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="../intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Version Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Metaprogramming</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Logger</div></li><li class="chapter-item expanded "><a href="../metaprogramming/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Home.html"><strong aria-hidden="true">8.</strong> Evlib</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Robot-Configuration.html"><strong aria-hidden="true">8.1.</strong> Robot Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Motor-and-MotorEnc.html"><strong aria-hidden="true">8.2.</strong> the Motor interfaces</a></li><li class="chapter-item expanded "><a href="../evlib/Creating-Motors.html"><strong aria-hidden="true">8.3.</strong> creating motors and continuous servos</a></li><li class="chapter-item expanded "><a href="../evlib/NMotors.html"><strong aria-hidden="true">8.4.</strong> grouping motors</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Wheels.html"><strong aria-hidden="true">8.5.</strong> driving mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Control.html"><strong aria-hidden="true">8.6.</strong> control of mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Servo-Presets.html"><strong aria-hidden="true">8.7.</strong> servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOp.html"><strong aria-hidden="true">8.8.</strong> abstract opmodes</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractTeleOp.html"><strong aria-hidden="true">8.9.</strong> abstract teleop</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractAutoOp.html"><strong aria-hidden="true">8.10.</strong> abstract autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractServoTuneOp.html"><strong aria-hidden="true">8.11.</strong> tuning the servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOptionsOp.html"><strong aria-hidden="true">8.12.</strong> selecting options for autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/GamepadManager.html"><strong aria-hidden="true">8.13.</strong> gamepad button edge detection and joystick scaling</a></li><li class="chapter-item expanded "><a href="../evlib/EVStates.html"><strong aria-hidden="true">8.14.</strong> EVStates factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVEndConditions.html"><strong aria-hidden="true">8.15.</strong> EVEndConditions factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVStateMachineBuilder.html"><strong aria-hidden="true">8.16.</strong> EVStateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../evlib/Analog-Sensors.html"><strong aria-hidden="true">8.17.</strong> analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Digital-Sensors.html"><strong aria-hidden="true">8.18.</strong> digital sensors</a></li><li class="chapter-item expanded "><a href="../evlib/CalibratedLineSensor.html"><strong aria-hidden="true">8.19.</strong> line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/DoubleLineSensor.html"><strong aria-hidden="true">8.20.</strong> double line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/ColorSensor.html"><strong aria-hidden="true">8.21.</strong> color sensor</a></li><li class="chapter-item expanded "><a href="../evlib/LineFinder.html"><strong aria-hidden="true">8.22.</strong> line finder</a></li><li class="chapter-item expanded "><a href="../evlib/AveragedSensor.html" class="active"><strong aria-hidden="true">8.23.</strong> averaging analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Telem.html"><strong aria-hidden="true">8.24.</strong> global telemetry</a></li><li class="chapter-item expanded "><a href="../evlib/StepTimer.html"><strong aria-hidden="true">8.25.</strong> step timer for logging</a></li><li class="chapter-item expanded "><a href="../evlib/FileUtil.html"><strong aria-hidden="true">8.26.</strong> file utilities</a></li><li class="chapter-item expanded "><a href="../evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.html"><strong aria-hidden="true">8.27.</strong> image processing with Vuforia</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">FTC Programming with ElectronVolts</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>AveragedSensor takes an <a href="Analog-Sensors.html">AnalogSensor</a> and averages the last N values to get the current value. The act() method should be called exactly once every time through the loop, but getValue() can be called whenever you need the value. The isReady() method will return true if the sensor is done collecting the first N values. If the sensor is not ready, the value will not be accurate.</p>
+<p><a href="https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/sensors/AveragedSensor.java">ftc/evlib/hardware/sensors/AveragedSensor.java</a></p>
+<pre><code class="language-java">package ftc.evlib.hardware.sensors;
+
+/**
+ * This file was made by the electronVolts, FTC team 7393
+ * Date Created: 3/16/16
+ * 
+ * report the average of the last N values of a sensor as the value
+ *
+ * @see AnalogSensor
+ */
+public class AveragedSensor implements AnalogSensor {
+    private final AnalogSensor sensor;
+    private final double readings[];
+    private int index = 0;
+    private boolean ready = false;
+    private final int numReadings;
+    private double average = 0;
+
+    /**
+     * @param sensor      the sensor to average
+     * @param numReadings the number of readings to average
+     */
+    public AveragedSensor(AnalogSensor sensor, int numReadings) {
+        this.sensor = sensor;
+        this.numReadings = numReadings;
+        readings = new double[numReadings];
+    }
+
+    /**
+     * @return true once the first numReadings have been read
+     */
+    public boolean isReady() {
+        return ready;
+    }
+
+    @Override
+    public Double getValue() {
+        return average;
+    }
+
+    /**
+     * read the sensor and update the average
+     */
+    public void act() {
+        double reading = sensor.getValue();
+        readings[index] = reading;
+        index++;
+        if (index &gt;= numReadings) {
+            index = 0;
+            ready = true;
+        }
+        if (ready) {
+            average = 0;
+            for (int i = 0; i &lt; numReadings; i++) {
+                average += readings[i];
+            }
+            average /= numReadings;
+        } else {
+            average = reading;
+        }
+    }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../evlib/LineFinder.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../evlib/Telem.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../evlib/LineFinder.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../evlib/Telem.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
