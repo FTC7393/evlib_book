@@ -10,10 +10,6 @@ To start, you must first have Java installed. Java 8 or 11 should work, and if y
 
 ### Android Studio
 
-> The editor will be an extension of your hand; the keys will sing as they slice their way through text and thought.
-
-*(Andrew Hunt and David Thomas, The Pragmatic Programmer)*
-
 Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as code formatting or version control toolbar (TODO: Link this to version control page). The most relevant integration for FTC is donwloading programs onto Android devices.
 
 To install Android Studio for Windows or MacOS computers, go to the [Android Studio](https://developer.android.com/studio/) site and follow the installation instructions for your OS. \*nix users should follow the distribution-dependent instructions for installing Android Studio.
