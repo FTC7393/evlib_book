@@ -1,4 +1,4 @@
-The following is an example of how the Logger and [[FileUtil]] classes are used together in an OpMode to log values. The logs will appear in the phone storage in the FTC/logs folder.
+The following is an example of how the Logger and [FileUtil](FileUtil.md) classes are used together in an OpMode to log values. The logs will appear in the phone storage in the FTC/logs folder.
 
 ```java
 package org.firstinspires.ftc.teamcode.yr2016.opmodes;
