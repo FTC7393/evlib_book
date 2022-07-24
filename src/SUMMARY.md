@@ -33,7 +33,7 @@
     - [Adding Servos to TeleOp](./evlib/Adding-Servos-to-TeleOp.md)
     - [Adding Servos to Autonomous](./evlib/Adding-Servos-to-Autonomous.md)
     - [Vuforia and OpenCV Beacon Color Detection](./evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.md) 
-- [Evlib Additional Features]()
+- [Evlib Additional Features](./evlib/Features.md)
     - [Robot Configuration](./evlib/Robot-Configuration.md)
     - [the Motor interfaces](./evlib/Motor-and-MotorEnc.md)
     - [creating motors and continuous servos](./evlib/Creating-Motors.md)
