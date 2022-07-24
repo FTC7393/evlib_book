@@ -14,6 +14,8 @@ This example uses EVLib functionality to:
 * Crop the beacon out of the frame based on the target image location
 * Find the beacon's color
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [sample/v3/SampleVuforiaOp.java](https://github.com/FTC7393/EVLib/blob/master/sample/v3/SampleVuforiaOp.java)
 ```java
 package org.firstinspires.ftc.teamcode.sample.v3;

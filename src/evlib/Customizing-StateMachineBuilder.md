@@ -72,6 +72,8 @@ We then have to change our creation of the StateMachineBuilder to create this ne
 
 Here is the autonomous with both changes:
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [/sample/v2/SampleAuto.java](https://github.com/FTC7393/EVLib/blob/master/sample/v2/SampleAuto.java)
 ```java
 package org.firstinspires.ftc.teamcode.sample.v2;

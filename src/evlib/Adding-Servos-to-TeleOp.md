@@ -12,6 +12,8 @@ You can also specify the speed if you want the servo to turn more slowly:
 
 The following is the new TeleOp program with the servos added.
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [/sample/v3/SampleTeleOp.java](https://github.com/FTC7393/EVLib/blob/master/sample/v3/SampleTeleOp.java)
 ```java
 package org.firstinspires.ftc.teamcode.sample.v3;

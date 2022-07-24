@@ -37,6 +37,8 @@ Motor combined = Motors.combinedWithoutEncoder(
 
 Here are all the methods for creating motors:
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [ftc/evlib/hardware/motors/Motors.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/motors/Motors.java)
 ```java
 package ftc.evlib.hardware.motors;

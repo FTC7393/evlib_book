@@ -17,6 +17,8 @@ Some others that are also useful are:
 * **oneWheelTurn** -- powers one wheel to turn
 * **motorTurn** -- turns a motor
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [ftc/evlib/statemachine/EVStates.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/statemachine/EVStates.java)
 ```java
 package ftc.evlib.statemachine;

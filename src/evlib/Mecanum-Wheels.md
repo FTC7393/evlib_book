@@ -36,6 +36,8 @@ The next thing to worry about is scaling to make sure the motors do not get sent
 
 This is the MecanumMotors class, which extends FourMotors, which in turn extends NMotors. So all MecanumMotors has to do is convert the velocity in X, Y, and R to motor powers using the algorithm we found above. It also has various setters for X, y, and R, as well as functions to convert polar (direction and distance) coordinates to cartesian (x and y) coordinates.
 
+> This example uses guava to initialize lists, which we have left for alternative methods.
+
 [ftc/evlib/hardware/motors/MecanumMotors.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/motors/MecanumMotors.java)
 ```java
 package ftc.evlib.hardware.motors;
