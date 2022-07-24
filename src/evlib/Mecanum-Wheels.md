@@ -1,4 +1,4 @@
-Before you read this, it might be helpful to read about the [[NMotors]] class first.
+Before you read this, it might be helpful to read about the [NMotors](NMotors.md) class first.
 
 Mecanum wheels use diagonal forces to move in any direction. Here is a diagram of the direction of the force of each wheel when moving forward:
 
@@ -32,7 +32,7 @@ brPower = + x + y - r
 
 This converts the desired motion of the robot into the power for the wheels.
 
-The next thing to worry about is scaling to make sure the motors do not get sent a power that is greater than 1 or less than -1. Fortunately, the scaling is already implemented in the [[NMotors]] class.
+The next thing to worry about is scaling to make sure the motors do not get sent a power that is greater than 1 or less than -1. Fortunately, the scaling is already implemented in the [NMotors](NMotors.md) class.
 
 This is the MecanumMotors class, which extends FourMotors, which in turn extends NMotors. So all MecanumMotors has to do is convert the velocity in X, Y, and R to motor powers using the algorithm we found above. It also has various setters for X, y, and R, as well as functions to convert polar (direction and distance) coordinates to cartesian (x and y) coordinates.
 

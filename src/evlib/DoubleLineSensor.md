@@ -1,6 +1,6 @@
-This takes two [[CalibratedLineSensor]] objects and combines them. It reports the robot's position relative to the line. It is used in [[LineFinder]] along with a [[ColorSensor]] to find different colored lines.
+This takes two [CalibratedLineSensor](CalibratedLineSensor.md) objects and combines them. It reports the robot's position relative to the line. It is used in [LineFinder](LineFinder.md) along with a [ColorSensor](ColorSensor.md) to find different colored lines.
 
-It is be used in [ftc/evlib/hardware/control/TranslationControls.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/control/TranslationControls.java) to do line following. See: [[Mecanum Control]]
+It is be used in [ftc/evlib/hardware/control/TranslationControls.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/control/TranslationControls.java) to do line following. See: [Mecanum Control](Mecanum-Control.md)
 
 [ftc/evlib/hardware/sensors/DoubleLineSensor.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/sensors/DoubleLineSensor.java)
 

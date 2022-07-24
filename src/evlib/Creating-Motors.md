@@ -1,4 +1,4 @@
-Before you read this, it is helpful to read about the [[Motor and MotorEnc]] interfaces.
+Before you read this, it is helpful to read about the [Motor and MotorEnc](Motor-and-MotorEnc.md) interfaces.
 
 To get a DcMotor from the hardwareMap and wrap it with the Motor interface, you can do the following:
 

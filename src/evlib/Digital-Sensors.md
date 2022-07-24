@@ -36,4 +36,4 @@ To get the value of a DigitalSensor, call the getValue() method which returns a 
 teletry.addData("limit switch pressed?", limitSwitch.getValue());
 ```
 
-See also: [[Analog Sensors]]
+See also: [Analog Sensors](Analog-Sensors.md)

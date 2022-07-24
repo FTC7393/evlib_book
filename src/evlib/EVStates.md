@@ -1,4 +1,4 @@
-**EVStates** | [[EVEndConditions]] | [[EVStateMachineBuilder]]
+**EVStates** | [EVEndConditions](EVEndConditions.md) | [EVStateMachineBuilder](EVStateMachineBuilder.md)
 
 ***
 
@@ -12,7 +12,7 @@ Some that we use frequently are:
 
 Some others that are also useful are:
 
-* **drive** -- drives with a [[TwoMotors]] object
+* **drive** -- drives with a [TwoMotors](TwoMotors.md) object
 * **turn** -- tuns with a TwoMotors object
 * **oneWheelTurn** -- powers one wheel to turn
 * **motorTurn** -- turns a motor

@@ -1,6 +1,6 @@
-Go to [[Servo Presets]] to see how to extend this class to tune the servos.
+Go to [Servo Presets](Servo-Presets.md) to see how to extend this class to tune the servos.
 
-Here is AbstractServoTuneOp, which can be extended to tune servos for any [[Robot Configuration]].
+Here is AbstractServoTuneOp, which can be extended to tune servos for any [Robot Configuration](Robot-Configuration.md).
 
 [ftc/evlib/opmodes/AbstractServoTuneOp.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/opmodes/AbstractServoTuneOp.java)
 ```java

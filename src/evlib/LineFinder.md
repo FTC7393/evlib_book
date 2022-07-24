@@ -1,4 +1,4 @@
-LineFinder uses a [[DoubleLineSensor]] and a [[ColorSensor]] to find lines of different colors. You use it by setting the color you are looking for, then calling getValue() to see if it is seeing the line color you requested.
+LineFinder uses a [DoubleLineSensor](DoubleLineSensor.md) and a [ColorSensor](ColorSensor.md) to find lines of different colors. You use it by setting the color you are looking for, then calling getValue() to see if it is seeing the line color you requested.
 
 [ftc/evlib/hardware/sensors/LineFinder.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/sensors/LineFinder.java)
 

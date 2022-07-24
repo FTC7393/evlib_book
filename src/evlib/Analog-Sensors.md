@@ -36,4 +36,4 @@ To get the value of a sensor, call the getValue() method:
 telemetry.addData("light sensor", lightSensor.getValue());
 ```
 
-See also: [[DistanceSensor]], [[Digital Sensors]]
+See also: [DistanceSensor](DistanceSensor.md), [Digital Sensors](Digital-Sensors.md)

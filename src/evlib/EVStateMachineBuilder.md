@@ -1,4 +1,4 @@
-[[EVStates]] | [[EVEndConditions]] | **EVStateMachineBuilder**
+[EVStates](EVStates.md) | [EVEndConditions](EVEndConditions.md) | **EVStateMachineBuilder**
 
 ***
 

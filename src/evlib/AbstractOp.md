@@ -1,4 +1,4 @@
-The AbstractOp allows you to make an opmode that is linked to a [[Robot Configuration]]. This class can be used directly by extending it, but it is recommended that you extend [[AbstractTeleOp]] or [[AbstractAutoOp]] instead to take advantage of their features as well as these.
+The AbstractOp allows you to make an opmode that is linked to a [Robot Configuration](Robot-Configuration.md). This class can be used directly by extending it, but it is recommended that you extend [AbstractTeleOp](AbstractTeleOp.md) or [AbstractAutoOp](AbstractAutoOp.md) instead to take advantage of their features as well as these.
 
 AbstractOp takes care of the following:
 

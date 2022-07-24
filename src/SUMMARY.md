@@ -39,7 +39,6 @@
     - [grouping motors](./evlib/NMotors.md)
     - [driving mecanum wheels](./evlib/Mecanum-Wheels.md)
     - [control of mecanum wheels](./evlib/Mecanum-Control.md)
-    - [servo presets](./evlib/Servo-Presets.md)
     - [abstract opmodes](./evlib/AbstractOp.md)
     - [abstract teleop](./evlib/AbstractTeleOp.md)
     - [abstract autonomous](./evlib/AbstractAutoOp.md)
@@ -59,4 +58,3 @@
     - [global telemetry](./evlib/Telem.md)
     - [step timer for logging](./evlib/StepTimer.md)
     - [file utilities](./evlib/FileUtil.md)
-    - [image processing with Vuforia](./evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.md)

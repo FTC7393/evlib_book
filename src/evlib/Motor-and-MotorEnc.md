@@ -1,4 +1,4 @@
-In EVLib there are 2 types of motors. Motor, which has no encoder, and MotorEnc, which has an encoder. A MotorEnc extends Motor, which means that you can use a motor with an encoder as a motor without an encoder. To create instances of these, see the [[Creating Motors]] page.
+In EVLib there are 2 types of motors. Motor, which has no encoder, and MotorEnc, which has an encoder. A MotorEnc extends Motor, which means that you can use a motor with an encoder as a motor without an encoder. To create instances of these, see the [Creating Motors](Creating-Motors.md) page.
 
 The interface for Motor has only a few methods, and the only way to control it is by setting the power.
 

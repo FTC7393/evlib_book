@@ -1,5 +1,5 @@
 
-## Features
+## Additional Features
 EVLib includes the [state-machine-framework](https://github.com/FTC7393/state-machine-framework/wiki), so all the features of the state-machine-framework can be used from EVLib.
 
 * [the Motor interfaces](Motor-and-MotorEnc.md)
@@ -9,7 +9,6 @@ EVLib includes the [state-machine-framework](https://github.com/FTC7393/state-ma
 * [control of mecanum wheels](Mecanum-Control.md)
 * [servo configuration](Servo-Config.md)
 * [servo speed control](Servo-Speed-Control.md)
-* [servo presets](Servo-Presets.md)
 * [abstract opmodes](AbstractOp.md)
 * [abstract teleop](AbstractTeleOp.md)
 * [abstract autonomous](AbstractAutoOp.md)

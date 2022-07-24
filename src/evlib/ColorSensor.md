@@ -1,4 +1,4 @@
-ColorSensor uses a red LED, a blue LED, and a photoresistor to detect the color of a line on the mat. It has 4 methods for setting the color: red, blue, magenta, and off. It implements [DigitalSensor](Digital-Sensors.md), returning whether or not it is seeing the color specified. It is used in [[LineFinder]] along with [[DoubleLineSensor]] to more accurately find colored lines.
+ColorSensor uses a red LED, a blue LED, and a photoresistor to detect the color of a line on the mat. It has 4 methods for setting the color: red, blue, magenta, and off. It implements [DigitalSensor](Digital-Sensors.md), returning whether or not it is seeing the color specified. It is used in [LineFinder](LineFinder.md) along with [DoubleLineSensor](DoubleLineSensor.md) to more accurately find colored lines.
 
 Fun fact: last year when connecting LEDs, we guessed on the resistor values and it burnt out 2 of our digital outputs. Always calculate the current before you plug LEDs in to the Core Device Interface Module.
 
