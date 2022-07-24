@@ -2,7 +2,6 @@
 ## Features
 EVLib includes the [state-machine-framework](https://github.com/FTC7393/state-machine-framework/wiki), so all the features of the state-machine-framework can be used from EVLib.
 
-* [robot configuration](Robot-Configuration.md)
 * [the Motor interfaces](Motor-and-MotorEnc.md)
 * [creating motors and continuous servos](Creating-Motors.md)
 * [grouping motors](NMotors.md)
