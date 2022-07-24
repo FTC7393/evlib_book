@@ -4,7 +4,7 @@ Vuforia and OpenCV are image processing libraries. [Vuforia](https://www.vuforia
 
 Before you can use this example, you have to:
 
-* Set up OpenCV. A guide is available on our website at http://www.gearbox4h.org/opencv/
+* Set up OpenCV. A guide is available on our website at ~~http://www.gearbox4h.org/opencv/~~ (no longer exists)
 * Create a Vuforia developer account and get a license key from https://developer.vuforia.com/license-manager
 
 This example uses EVLib functionality to:
