@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Using EVLib Minimally - FTC Programming with ElectronVolts</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li><li class="chapter-item expanded "><a href="../intro/evlib.html"><strong aria-hidden="true">1.3.</strong> The ElectronVolts Library</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Operation Mode Primer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Auto Primer</div></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Version Control</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Metaprogramming</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">7.1.</strong> Logger</div></li><li class="chapter-item expanded "><a href="../metaprogramming/options.html"><strong aria-hidden="true">7.2.</strong> Setting Options</a></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Home.html"><strong aria-hidden="true">8.</strong> Evlib [WIP]</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Importing-Into-Your-Project.html"><strong aria-hidden="true">8.1.</strong> Importing Into Your Project</a></li><li class="chapter-item expanded "><a href="../evlib/Sample-Code.html"><strong aria-hidden="true">8.2.</strong> Sample Code</a></li><li class="chapter-item expanded "><a href="../evlib/Using-EVLib-Minimally.html" class="active"><strong aria-hidden="true">8.3.</strong> Using EVLib Minimally</a></li><li class="chapter-item expanded "><a href="../evlib/Logging-Example.html"><strong aria-hidden="true">8.4.</strong> Logging Example</a></li><li class="chapter-item expanded "><a href="../evlib/Robot-Configuration.html"><strong aria-hidden="true">8.5.</strong> Robot Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-TeleOp-Program.html"><strong aria-hidden="true">8.6.</strong> Basic TeleOp Program</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-Autonomous-Program.html"><strong aria-hidden="true">8.7.</strong> Basic Autonomous Program</a></li><li class="chapter-item expanded "><a href="../evlib/Customizing-StateMachineBuilder.html"><strong aria-hidden="true">8.8.</strong> Customizing StateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../evlib/Servo-Presets.html"><strong aria-hidden="true">8.9.</strong> Servo Presets</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-the-Configuration.html"><strong aria-hidden="true">8.10.</strong> Adding Servos to the Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-TeleOp.html"><strong aria-hidden="true">8.11.</strong> Adding Servos to TeleOp</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-Autonomous.html"><strong aria-hidden="true">8.12.</strong> Adding Servos to Autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.html"><strong aria-hidden="true">8.13.</strong> Vuforia and OpenCV Beacon Color Detection</a></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Features.html"><strong aria-hidden="true">9.</strong> Evlib Additional Features [WIP]</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Motor-and-MotorEnc.html"><strong aria-hidden="true">9.1.</strong> the Motor interfaces</a></li><li class="chapter-item expanded "><a href="../evlib/Creating-Motors.html"><strong aria-hidden="true">9.2.</strong> creating motors and continuous servos</a></li><li class="chapter-item expanded "><a href="../evlib/NMotors.html"><strong aria-hidden="true">9.3.</strong> grouping motors</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Wheels.html"><strong aria-hidden="true">9.4.</strong> driving mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Control.html"><strong aria-hidden="true">9.5.</strong> control of mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Servo-Presets.html"><strong aria-hidden="true">9.6.</strong> servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOp.html"><strong aria-hidden="true">9.7.</strong> abstract opmodes</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractTeleOp.html"><strong aria-hidden="true">9.8.</strong> abstract teleop</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractAutoOp.html"><strong aria-hidden="true">9.9.</strong> abstract autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractServoTuneOp.html"><strong aria-hidden="true">9.10.</strong> tuning the servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOptionsOp.html"><strong aria-hidden="true">9.11.</strong> selecting options for autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/GamepadManager.html"><strong aria-hidden="true">9.12.</strong> gamepad button edge detection and joystick scaling</a></li><li class="chapter-item expanded "><a href="../evlib/EVStates.html"><strong aria-hidden="true">9.13.</strong> EVStates factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVEndConditions.html"><strong aria-hidden="true">9.14.</strong> EVEndConditions factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVStateMachineBuilder.html"><strong aria-hidden="true">9.15.</strong> EVStateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../evlib/Analog-Sensors.html"><strong aria-hidden="true">9.16.</strong> analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Digital-Sensors.html"><strong aria-hidden="true">9.17.</strong> digital sensors</a></li><li class="chapter-item expanded "><a href="../evlib/CalibratedLineSensor.html"><strong aria-hidden="true">9.18.</strong> line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/DoubleLineSensor.html"><strong aria-hidden="true">9.19.</strong> double line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/ColorSensor.html"><strong aria-hidden="true">9.20.</strong> color sensor</a></li><li class="chapter-item expanded "><a href="../evlib/LineFinder.html"><strong aria-hidden="true">9.21.</strong> line finder</a></li><li class="chapter-item expanded "><a href="../evlib/AveragedSensor.html"><strong aria-hidden="true">9.22.</strong> averaging analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Telem.html"><strong aria-hidden="true">9.23.</strong> global telemetry</a></li><li class="chapter-item expanded "><a href="../evlib/StepTimer.html"><strong aria-hidden="true">9.24.</strong> step timer for logging</a></li><li class="chapter-item expanded "><a href="../evlib/FileUtil.html"><strong aria-hidden="true">9.25.</strong> file utilities</a></li><li class="chapter-item expanded "><a href="../evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.html"><strong aria-hidden="true">9.26.</strong> image processing with Vuforia</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">FTC Programming with ElectronVolts</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>If you are just starting out with FTC, using this library to its fullest extend probably seems intimidating. You can, however, use some of the simple functions of the library to save yourself some headaches. The following is an example of a TeleOp program that uses EVLib for 2 things:</p>
+<ol>
+<li>
+<p><a href="GamepadManager.html">Edge detection on the joystick buttons</a>. It might not seem like a big deal, but we spent too much time with flags and nested if statements before moving the edge detection to a dedicated class.</p>
+</li>
+<li>
+<p><a href="Creating-Motors.html">Management of the motor commands</a>. The EVLib can &quot;wrap&quot; a DcMotor object into either a Motor object (no encoder) or a MotorEnc object. This wrapper class receives your commands and sends them when you call the update() method.</p>
+</li>
+</ol>
+<p><a href="https://github.com/FTC7393/EVLib/blob/master/sample/v0/SampleTeleOp.java">/sample/v0/SampleTeleOp.java</a></p>
+<pre><code class="language-java">package org.firstinspires.ftc.teamcode.sample.v0;
+
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import ftc.electronvolts.util.Function;
+import ftc.electronvolts.util.Functions;
+import ftc.electronvolts.util.Utility;
+import ftc.evlib.driverstation.GamepadManager;
+import ftc.evlib.hardware.motors.Motor;
+import ftc.evlib.hardware.motors.Motors;
+import ftc.evlib.hardware.motors.Stoppers;
+
+/**
+ * This file was made by the electronVolts, FTC team 7393
+ * Date Created: 10/18/16
+ *
+ * Sample TeleOp that uses some of the EVLib functionality
+ */
+
+@TeleOp(name = &quot;SampleTeleOp V0&quot;)
+public class SampleTeleOp extends OpMode {
+    /**
+     * Adds edge detection to the gamepad buttons
+     * and analog scaling to the joysticks
+     */
+    private GamepadManager driver1, driver2;
+
+    /**
+     * Wraps the motors to easily keep track of motor direction
+     */
+    private Motor leftMotor, rightMotor;
+
+    /**
+     * Servo object from the FTC libraries
+     */
+    private Servo servo;
+
+    /**
+     * The servo's current position from 0 to 1
+     */
+    private double servoPosition;
+
+    /**
+     * Takes care of stopping both motors
+     */
+    private Stoppers stoppers = new Stoppers();
+
+    @Override
+    public void init() {
+        //get the motors from the hardwareMap and wrap them with the Motor interface
+        //         motor factory class method      hardware name, reversed, brake
+        leftMotor = Motors.withoutEncoder(hardwareMap, &quot;leftMotor&quot;, false, true, stoppers);
+        rightMotor = Motors.withoutEncoder(hardwareMap, &quot;rightMotor&quot;, true, true, stoppers);
+
+        //get the servo from the hardwareMap
+        servo = hardwareMap.servo.get(&quot;servo&quot;);
+    }
+
+    @Override
+    public void start() {
+        //use a squared function for the joystick scaling
+        Function scalingFunction = Functions.squared();
+
+        //create the two drivers' gamepads
+        driver1 = new GamepadManager(gamepad1, scalingFunction);
+        driver2 = new GamepadManager(gamepad2, scalingFunction);
+
+        //set the servo's position
+        servoPosition = 0.5;
+    }
+
+    @Override
+    public void loop() {
+        //set the left and right motor powers based on the scaled joystick values
+        leftMotor.setPower(driver1.left_stick_y.getValue());
+        rightMotor.setPower(driver1.right_stick_y.getValue());
+
+        //making use of the edge detection from the GamepadManager
+
+        //if the dpad up was just pressed, increase the servo position
+        if (driver1.dpad_up.justPressed()) {
+            servoPosition += 0.1;
+        }
+
+        //if the dpad down was just pressed, decrease the servo position
+        if (driver1.dpad_down.justPressed()) {
+            servoPosition -= 0.1;
+        }
+
+        //limit the servo position to be in the valid range for servos (0 to 1)
+        servoPosition = Utility.servoLimit(servoPosition);
+
+        //send the command to the servo
+        servo.setPosition(servoPosition);
+
+        //send the motor powers to the motor controller
+        leftMotor.update();
+        rightMotor.update();
+    }
+
+    @Override
+    public void stop() {
+        //stop both motors
+        stoppers.stop();
+    }
+}
+</code></pre>
+<p>If you want, you can stop here, you can check out a <a href="Logging-Example.html">Logging Example</a> for another simple use of EVLib, or you can move on to <a href="Robot-Configuration.html">Robot Configuration</a> if you want to learn more in depth about the library.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../evlib/Sample-Code.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../evlib/Logging-Example.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../evlib/Sample-Code.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../evlib/Logging-Example.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
