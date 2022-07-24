@@ -159,4 +159,4 @@ public class SampleTeleOp extends AbstractTeleOp<SampleRobotCfg> {
 }
 ```
 
-The next step is [[Adding Servos to Autonomous]].
+The next step is [Adding Servos to Autonomous](Adding-Servos-to-Autonomous.md).

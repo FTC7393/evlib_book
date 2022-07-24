@@ -155,4 +155,4 @@ public class SampleRobotCfg extends RobotCfg {
 }
 ```
 
-With the servos now configured, we can move on to [[Adding Servos to TeleOp]]
+With the servos now configured, we can move on to [Adding Servos to TeleOp](Adding-Servos-to-TeleOp.md)

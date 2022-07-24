@@ -73,4 +73,4 @@ public class SampleTeleOp extends AbstractTeleOp<SampleRobotCfg> {
 }
 ```
 
-The next step is to make a [[Basic Autonomous Program]].
+The next step is to make a Basic Autonomous Program (next chapter).

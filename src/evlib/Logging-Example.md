@@ -55,4 +55,4 @@ public class LogTestOp extends OpMode {
 }
 ```
 
-If you want to learn more about the library, check out [[Robot Configuration]].
+If you want to learn more about the library, check out the next chapter.

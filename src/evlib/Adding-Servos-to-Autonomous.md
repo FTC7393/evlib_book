@@ -186,4 +186,4 @@ public class SampleAuto extends AbstractAutoOp<SampleRobotCfg> {
 }
 ```
 
-The next step in the tutorial is [[Vuforia and OpenCV Beacon Color Detection]].
+The next step in the tutorial is [Vuforia and OpenCV Beacon Color Detection](Vuforia-and-OpenCV-Beacon-Color-Detection.md).

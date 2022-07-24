@@ -182,4 +182,4 @@ public class SampleAuto extends AbstractAutoOp<SampleRobotCfg> {
 
 I might not seem like a big improvement, but it makes a huge difference when you have upwards of 20 drive states you are trying to debug. It can also be applied to states that take more parameters, such as a gyro turn which needs [TwoMotors](NMotors.md), a GyroSensor, and a rotation speed (which could then be the same for all gyro turns).
 
-The next step is to use [[Servo Presets]] to add some features to the servos.
+The next step is to use [Servo Presets](Servo-Presets.md) to add some features to the servos.

@@ -144,4 +144,5 @@ public class SampleVuforiaOp extends AbstractAutoOp<RobotCfg> {
 }
 ```
 
-This concludes the tutorial for now. Check back later for more updates and sample code, or check out the [[Features]] page for other things you can do with EVLib.
+This concludes the tutorial for now. Check back later for more updates and sample code, or return to
+the the [Home](Home.md) page for an index of other things you can do with EVLib.

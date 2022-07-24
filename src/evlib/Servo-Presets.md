@@ -93,4 +93,4 @@ public class SampleServoTuneOp extends AbstractServoTuneOp {
 }
 ```
 
-The details of how the servos are initialized are in the next step: [[Adding Servos to the Configuration]]
+The details of how the servos are initialized are in the next chapter.

@@ -69,4 +69,4 @@ public class SampleRobotCfg extends RobotCfg {
 }
 ```
 
-The next step is to bring the robot to life with a [[Basic TeleOp Program]]
+The next step is to bring the robot to life with a Basic TeleOp Program (next chapter)

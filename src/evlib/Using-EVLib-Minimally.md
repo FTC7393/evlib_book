@@ -116,4 +116,4 @@ public class SampleTeleOp extends OpMode {
 }
 ```
 
-If you want, you can stop here, you can check out a [[Logging Example]] for another simple use of EVLib, or you can move on to [[Robot Configuration]] if you want to learn more in depth about the library.
+If you want, you can stop here, you can check out a [Logging Example](Logging-Example.md) for another simple use of EVLib, or you can move on to [Robot Configuration](Robot-Configuration.md) if you want to learn more in depth about the library.

@@ -89,4 +89,4 @@ public class SampleAuto extends AbstractAutoOp<SampleRobotCfg> {
 }
 ```
 
-You can simplify this autonomous a bit by [[Customizing StateMachineBuilder]].
+You can simplify this autonomous a bit by customizing the StateMachineBuilder (next chapter).
