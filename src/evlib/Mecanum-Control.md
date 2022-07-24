@@ -1,4 +1,4 @@
-Using the [[MecanumMotors|Mecanum Wheels]] class that converts velocity in the X, Y, and R directions, we need a way to add control algorithms, such as gyro stabilization or line following.
+Using the [MecanumMotors](Mecanum-Wheels.md) class that converts velocity in the X, Y, and R directions, we need a way to add control algorithms, such as gyro stabilization or line following.
 
 The gyro algorithm would look like:
 ```

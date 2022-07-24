@@ -1,4 +1,4 @@
-After you have [[set up a RobotCfg|Robot Configuration]], you can now write TeleOp and Autonomous OpModes.
+After you have [set up a RobotCfg](Robot-Configuration.md), you can now write TeleOp and Autonomous OpModes.
 
 The following is a sample TeleOp program that uses the sample RobotCfg.
 

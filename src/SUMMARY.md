@@ -20,4 +20,5 @@
     - [Logger]()
     - [Setting Options](./metaprogramming/options.md)
 - [Evlib](./evlib/Home.md)
+    - [Robot Configuration](./evlib/Robot-Configuration.md)
 - [Dependencies]()

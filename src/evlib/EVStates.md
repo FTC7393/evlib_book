@@ -7,7 +7,7 @@ EVStates is a factory class that extends States from the state-machine-framework
 Some that we use frequently are:
 
 * **mecanumDrive** -- drives with the mecanum wheels and stabilizes with the gyro
-* **servoTurn** -- turns a servo to a [[preset|Servo Presets]] at a given [[speed|Servo Speed Control]]
+* **servoTurn** -- turns a servo to a [preset](Servo-Presets.md) at a given [speed](Servo-Speed-Control.md)
 * **calibrateGyro** -- waits for the gyro sensor to finish calibrating
 
 Some others that are also useful are:

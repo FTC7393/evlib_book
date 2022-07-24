@@ -1,4 +1,4 @@
-AbstractTeleOp extends [[AbstractOp]] and adds code to handle the gamepads. You can use this to make a TeleOp by extending this class. [[Here|Basic TeleOp Program]] is and example. Inside your class you have access to driver1 and driver2, which are instances of the [[GamepadManager]] class. They add edge detection and scaling to the gamepads. See also: [[AbstractAutoOp]]
+AbstractTeleOp extends [[AbstractOp]] and adds code to handle the gamepads. You can use this to make a TeleOp by extending this class. [Here](Basic-TeleOp-Program.md) is and example. Inside your class you have access to driver1 and driver2, which are instances of the [[GamepadManager]] class. They add edge detection and scaling to the gamepads. See also: [[AbstractAutoOp]]
 
 [ftc/evlib/opmodes/AbstractTeleOp.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/opmodes/AbstractTeleOp.java)
 ```java

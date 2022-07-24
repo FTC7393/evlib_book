@@ -1,4 +1,4 @@
-AveragedSensor takes an [[AnalogSensor|Analog Sensors]] and averages the last N values to get the current value. The act() method should be called exactly once every time through the loop, but getValue() can be called whenever you need the value. The isReady() method will return true if the sensor is done collecting the first N values. If the sensor is not ready, the value will not be accurate.
+AveragedSensor takes an [AnalogSensor](Analog-Sensors.md) and averages the last N values to get the current value. The act() method should be called exactly once every time through the loop, but getValue() can be called whenever you need the value. The isReady() method will return true if the sensor is done collecting the first N values. If the sensor is not ready, the value will not be accurate.
 
 [ftc/evlib/hardware/sensors/AveragedSensor.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/sensors/AveragedSensor.java)
 ```java

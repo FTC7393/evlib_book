@@ -13,7 +13,7 @@ The output in the Android monitor would be:
 01-02 03:04:05.678      901-234/? I/MATH: TIME: Complex math calculation: 567 ms
 ```
 
-Here is an example from the [[image processing code|OpenCV Image Processing]]:
+Here is an example from the [image processing code](OpenCV-Image-Processing.md):
 
 ```java
 stepTimer.start();

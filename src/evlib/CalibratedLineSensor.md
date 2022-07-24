@@ -1,4 +1,4 @@
-CalibratedLineSensor takes an [[analog|Analog Sensors]] line sensor and turns it into a [[DigitalSensor|Digital Sensors]] by finding a threshold between light and dark. The getValue() method will return true if the sensor sees a line. Note: the act method must be called every loop to update the sensor values for averaging. This class is used in [[DoubleLineSensor]].
+CalibratedLineSensor takes an [analog](Analog-Sensors.md) line sensor and turns it into a [DigitalSensor](Digital-Sensors.md) by finding a threshold between light and dark. The getValue() method will return true if the sensor sees a line. Note: the act method must be called every loop to update the sensor values for averaging. This class is used in [[DoubleLineSensor]].
 
 [ftc/evlib/hardware/sensors/CalibratedLineSensor.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/hardware/sensors/CalibratedLineSensor.java)
 

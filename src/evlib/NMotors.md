@@ -1,4 +1,4 @@
-Before you read this, it is helpful to read about the [[Motor and MotorEnc]] interfaces and also how to [[create motors|Creating Motors]].
+Before you read this, it is helpful to read about the [[Motor and MotorEnc]] interfaces and also how to [create motors](Creating-Motors.md).
 
 The following class groups any number of motors and can run them all at once with a list of powers.
 

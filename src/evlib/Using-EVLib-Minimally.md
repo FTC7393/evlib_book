@@ -1,8 +1,8 @@
 If you are just starting out with FTC, using this library to its fullest extend probably seems intimidating. You can, however, use some of the simple functions of the library to save yourself some headaches. The following is an example of a TeleOp program that uses EVLib for 2 things:
 
-1. [[Edge detection on the joystick buttons|GamepadManager]]. It might not seem like a big deal, but we spent too much time with flags and nested if statements before moving the edge detection to a dedicated class.
+1. [Edge detection on the joystick buttons](GamepadManager.md). It might not seem like a big deal, but we spent too much time with flags and nested if statements before moving the edge detection to a dedicated class.
 
-2. [[Management of the motor commands|Creating Motors]]. The EVLib can "wrap" a DcMotor object into either a Motor object (no encoder) or a MotorEnc object. This wrapper class receives your commands and sends them when you call the update() method.
+2. [Management of the motor commands](Creating-Motors.md). The EVLib can "wrap" a DcMotor object into either a Motor object (no encoder) or a MotorEnc object. This wrapper class receives your commands and sends them when you call the update() method.
 
 [/sample/v0/SampleTeleOp.java](https://github.com/FTC7393/EVLib/blob/master/sample/v0/SampleTeleOp.java)
 ```java

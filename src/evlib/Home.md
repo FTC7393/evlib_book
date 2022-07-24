@@ -2,44 +2,44 @@ Welcome to the EVLib wiki!
 
 EVLib is designed to assist in the development of very powerful FTC autonomous programs. It provides helper mechanisms for a variety of hardware, like servo speed control.
 
-For starters, check [[this page|Importing Into Your Project]] for instructions on importing into your project.
+For starters, check [this page](Importing-Into-Your-Project.md) for instructions on importing into your project.
 
 ## Features
 EVLib includes the [state-machine-framework](https://github.com/FTC7393/state-machine-framework/wiki), so all the features of the state-machine-framework can be used from EVLib.
 
-* [[robot configuration|Robot Configuration]]
-* [[the Motor interfaces|Motor and MotorEnc]]
-* [[creating motors and continuous servos|Creating Motors]]
-* [[grouping motors|NMotors]]
-* [[driving mecanum wheels|Mecanum Wheels]]
-* [[control of mecanum wheels|Mecanum Control]]
-* [[servo configuration|Servo Config]]
-* [[servo speed control|Servo Speed Control]]
-* [[servo presets|Servo Presets]]
-* [[abstract opmodes|AbstractOp]]
-* [[abstract teleop|AbstractTeleOp]]
-* [[abstract autonomous|AbstractAutoOp]]
-* [[tuning the servo presets|AbstractServoTuneOp]]
-* [[selecting options for autonomous|AbstractOptionsOp]]
-* [[gamepad button edge detection and joystick scaling|GamepadManager]]
-* [[EVStates factory class|EVStates]]
-* [[EVEndConditions factory class|EVEndConditions]]
-* [[EVStateMachineBuilder|EVStateMachineBuilder]]
-* [[analog sensors|Analog Sensors]]
-* [[digital sensors|Digital Sensors]]
-* [[frame grabbing with OpenCV|OpenCV Frame Grabbing]]
-* [[image processing with OpenCV|OpenCV Image Processing]]
-* [[line sensor|CalibratedLineSensor]]
-* [[double line sensor|DoubleLineSensor]]
-* [[color sensor|ColorSensor]]
-* [[line finder|LineFinder]]
-* [[averaging analog sensors|AveragedSensor]]
-* [[global telemetry|Telem]]
-* [[step timer for logging|StepTimer]]
-* [[file utilities|FileUtil]]
+* [robot configuration](Robot-Configuration.md)
+* [the Motor interfaces](Motor-and-MotorEnc.md)
+* [creating motors and continuous servos](Creating-Motors.md)
+* [grouping motors](NMotors.md)
+* [driving mecanum wheels](Mecanum-Wheels.md)
+* [control of mecanum wheels](Mecanum-Control.md)
+* [servo configuration](Servo-Config.md)
+* [servo speed control](Servo-Speed-Control.md)
+* [servo presets](Servo-Presets.md)
+* [abstract opmodes](AbstractOp.md)
+* [abstract teleop](AbstractTeleOp.md)
+* [abstract autonomous](AbstractAutoOp.md)
+* [tuning the servo presets](AbstractServoTuneOp.md)
+* [selecting options for autonomous](AbstractOptionsOp.md)
+* [gamepad button edge detection and joystick scaling](GamepadManager.md)
+* [EVStates factory class](EVStates.md)
+* [EVEndConditions factory class](EVEndConditions.md)
+* [EVStateMachineBuilder](EVStateMachineBuilder.md)
+* [analog sensors](Analog-Sensors.md)
+* [digital sensors](Digital-Sensors.md)
+* [frame grabbing with OpenCV](OpenCV-Frame-Grabbing.md)
+* [image processing with OpenCV](OpenCV-Image-Processing.md)
+* [line sensor](CalibratedLineSensor.md)
+* [double line sensor](DoubleLineSensor.md)
+* [color sensor](ColorSensor.md)
+* [line finder](LineFinder.md)
+* [averaging analog sensors](AveragedSensor.md)
+* [global telemetry](Telem.md)
+* [step timer for logging](StepTimer.md)
+* [file utilities](FileUtil.md)
 * [[LineSensorArray]] that uses the i2c [SparkFun Line Follower Array](https://www.sparkfun.com/products/13582)
-* [[frame grabbing with Vuforia|Vuforia Frame Grabbing]]
-* [[image processing with Vuforia|Vuforia and OpenCV Beacon Color Detection]]
+* [frame grabbing with Vuforia](Vuforia-Frame-Grabbing.md)
+* [image processing with Vuforia](Vuforia-and-OpenCV-Beacon-Color-Detection.md)
 * [[Joystick Recorder]] for "playback" in autonomous
 
 ## Planned Features

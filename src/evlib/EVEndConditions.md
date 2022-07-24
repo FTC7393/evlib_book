@@ -6,8 +6,8 @@ EVEndConditions is a factory class that extends EndConditions from the state-mac
 
 Some of the useful ones are:
 
-* **analogSensorGreater** -- waits for an [[AnalogSensor|Analog Sensors]] to be greater than a certain value
-* **analogSensorLess** -- waits for an [[AnalogSensor|Analog Sensors]] to be less than a certain value
+* **analogSensorGreater** -- waits for an [AnalogSensor](Analog-Sensors.md) to be greater than a certain value
+* **analogSensorLess** -- waits for an [AnalogSensor](Analog-Sensors.md) to be less than a certain value
 * **gyroCloseTo** -- waits for a gyro sensor to be close to a certain value
 * **distanceSensorGreater** -- waits for a [[DistanceSensor]] to be greater than a certain value
 * **distanceSensorLess** -- waits for a [[DistanceSensor]] to be less than a certain value
