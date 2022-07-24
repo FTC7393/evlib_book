@@ -32,6 +32,13 @@ In addition, if you open the project in Android Studio and switch to Android pro
 
 ![Android project view](./setup_android_project_view.png)
 
-### ElectronVolts Library
+### Evlib
 
-The latest version of the ElectronVolts library does not exist, as of yet, in its own repository. You can find a copy of it on the [ElectronVolts github page](www.example.com), on the current year's repository and branch, in `TeamCode/src/main/java/ftc`. For example, during the 2021-2022 season, it was in [FtcRobotController](https://github.com/FTC7393/FtcRobotController), on branch [Season2021](https://github.com/FTC7393/FtcRobotController/tree/Season2021). Copy all the files in that directory to anywhere within your project's working folder.
+The latest version of Evlib does not exist, as of yet, in its own repository. You can find a copy of it on the [ElectronVolts github page](https://github.com/ftc7393/FtcRobotController), on the `evlib-release` branch. Copy all the files in the `./Evlib` directory to the same location in your project, then update the `settings.gradle` file like so:
+```diff
+  include ':FtcRobotController'
+  include ':TeamCode'
++ include ':Evlib'
+```
+
+We are currently working on an alternative method to install evlib using the same method as before. Check [the original page](../evlib/Importing-Into-Your-Project.md) for updates.
