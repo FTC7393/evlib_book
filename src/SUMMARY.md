@@ -59,4 +59,4 @@
     - [Adding Servos to Autonomous](./evlib/Adding-Servos-to-Autonomous.md)
     - [Vuforia and OpenCV Beacon Color Detection](./evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.md) 
 ---
-- [Evlib Feature Index [WIP]](./evlib/Features.md)
+[Evlib Feature Index [WIP]](./evlib/Features.md)
