@@ -10,7 +10,7 @@ releases aren't up to date. We're working on it though!
 3. Now you need to tell gradle that EVLib is a dependency. In android studio, edit the `TeamCode/build.gradle` file and add the following lines:
 ```groovy
 dependencies {
-    implementation 'EVlib-release.aar`
+    implementation files('EVlib-release.aar')
 }
 ```
 
