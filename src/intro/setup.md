@@ -4,7 +4,7 @@ Note: Whenever \*nix is used here, it refers to operating systems which are some
 
 ### Java
 
-*This step can sometimes be ignored, since you'll already have Java if another app you have uses it.*
+> This step can usually be ignored, since almost every computer has java preinstalled.
 
 To start, you must first have Java installed. Java 8 or 11 should work, and if you can get Java 16, even better. Windows or MacOS users should go to [the Oracle site](https://www.oracle.com/java/technologies/downloads/) and follow the installation instructions for your OS. \*nix users should follow the distribution-dependent instructions for installing java.
 
@@ -34,7 +34,7 @@ In addition, if you open the project in Android Studio and switch to Android pro
 
 ### Evlib
 
-The latest version of Evlib does not exist, as of yet, in its own repository. You can find a copy of it on the [ElectronVolts github page](https://github.com/ftc7393/FtcRobotController), on the `evlib-release` branch. Copy all the files in the `./Evlib` directory to the same location in your project, then update the `settings.gradle` file like so:
+The latest version of Evlib is not available in its own repository. You can find a copy of it on the [ElectronVolts github page](https://github.com/ftc7393/FtcRobotController), on the `evlib-release` branch. Copy all the files in the `./Evlib` directory to the same location in your project, then update the `settings.gradle` file like so:
 ```diff
   include ':FtcRobotController'
   include ':TeamCode'
