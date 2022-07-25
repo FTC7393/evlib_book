@@ -1,4 +1,4 @@
-Note: Whenever \*nix is used here, it refers to operating systems which are somehow based off Unix, like Linux, BSD, and such (excluding Apple operating systems). If you didn't understand some of those words, don't worry: You don't have to.
+Note: Whenever \*nix is used here, it refers to operating systems which are somehow based off Unix, like Linux, BSD, and such (excluding Apple operating systems).
 
 # Development Environment
 
@@ -10,7 +10,7 @@ To start, you must first have Java installed. Java 8 or 11 should work, and if y
 
 ### Android Studio
 
-Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as code formatting or version control toolbar (TODO: Link this to version control page). The most relevant integration for FTC is donwloading programs onto Android devices.
+Android Studio is an "IDE", or Integrated Development Environment. It serves the same purpose as a text editor, but has "Integrations", such as code formatting or [version control](https://www.jetbrains.com/help/idea/version-control-integration.html). The most important integration for FTC is donwloading programs onto Android devices.
 
 To install Android Studio for Windows or MacOS computers, go to the [Android Studio](https://developer.android.com/studio/) site and follow the installation instructions for your OS. \*nix users should follow the distribution-dependent instructions for installing Android Studio.
 
@@ -20,15 +20,13 @@ You should definitely spend some time customizing and familiarizing yourself wit
 
 ### FTC Framework
 
-Your entire project is based off the Qualcomm framework. To begin a new FTC project, copy all of the code from [the FTC repository](https://github.com/FIRST-Tech-Challenge/FtcRobotController) into your own project. You can do this by clicking the "Code" button, then clicking "Download ZIP", as shown.
+Your project is based off the Qualcomm framework. To begin a new FTC project, copy all of the code from [the FTC repository](https://github.com/FIRST-Tech-Challenge/FtcRobotController) into your own project. You can do this by clicking the "Code" button, then clicking "Download ZIP", as shown.
 
 ![Download from Github](./setup_github_download.png)
 
-It is better, though, to use Version Control to do this. This is discussed more in the Version Control section (TODO!!).
+It is better, though, to use Version Control to do this. If you are familiar with github and have a github account, you can do this by "forking" the FTC repository and using that instead.
 
-You can then start writing your code in (**and only in**) the `TeamCode/src/main/java` directory.
-
-In addition, if you open the project in Android Studio and switch to Android project view as shown, you can navigate to `TeamCode/java` to get to the same directory.
+You can then start writing your code in the `TeamCode/src/main/java` directory.  In Android Studio, you can open this directory by switching from Project to Android view as shown, then navigating to `TeamCode/java`.
 
 ![Android project view](./setup_android_project_view.png)
 

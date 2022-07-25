@@ -2,11 +2,11 @@
 
 This part is review for those who've already done FTC.
 
-The REV robotics core communicates over wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read about it on the [FTC docs page](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System).
+The REV robotics core communicates over wifi with a phone, which controls the robot core. The robot core, in turn, can control connected hardware. You can read more on the [FTC docs page](https://github.com/FIRST-Tech-Challenge/FtcRobotController/wiki/The-FTC-Control-System).
 
 ## FTC Framework
 
-The software on the phone is always the same; the code on the robot is what you control. Even so, there's a certain way your program must act. This is why, when writing your FTC program, you must do it within a framework.
+The FTC framework expects your code to be written in a certain way so that it can use it in its own classes. In particular, you need to have a class which is marked as "runnable" (either as autonomous or teleop) and is usable (inherits from the `com.qualcomm.robotcore.eventloop.opmode.OpMode` class).
 
 For example, a wrong way to write FTC code:
 ```java
@@ -56,6 +56,6 @@ public class FooOp extends LinearOpMode {
 }
 ```
 
-All the problems in the previous code have been corrected here:
+All the mentioned problems in the previous code have been corrected here:
 - The `hardwareMap` now exists: It exists in the superclasses of `FooOp`.
 - The `@Autonomous` annotation now makes sense: It is annotating a class which is a Linear Operation Mode. The Qualcomm framework can now correctly detect and run it.
