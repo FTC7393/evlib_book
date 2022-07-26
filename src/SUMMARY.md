@@ -71,7 +71,7 @@
         - [color sensor](./evlib/ColorSensor.md)
         - [line finder](./evlib/LineFinder.md)
     - [gamepad button edge detection and joystick scaling](./evlib/GamepadManager.md)
-- [Other Control Flow and Debugging]()
+- [Utilities]()
     - [global telemetry](./evlib/Telem.md)
     - [step timer for logging](./evlib/StepTimer.md)
     - [file utilities](./evlib/FileUtil.md)
