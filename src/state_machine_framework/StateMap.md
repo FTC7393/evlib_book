@@ -1,3 +1,5 @@
+> This page is out of date (unsupported feature)
+
 The StateMap class stores the next [StateName](StateName.md)s and their corresponding [EndCondition](EndCondition.md)s. It has several of() methods for easily creating StateMap objects. It is used in [AbstractState](AbstractState.md) to keep track of the transitions out of a state.
 
 [ftc/electronvolts/statemachine/StateMap.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/StateMap.java)

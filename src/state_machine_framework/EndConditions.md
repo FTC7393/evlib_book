@@ -1,3 +1,5 @@
+> This page is out of date (unsupported feature)
+
 EndConditions is a factory for the most commonly used [EndCondition](EndCondition.md) objects. Storing all of these end conditions in one place allows programmers to write and debug code quickly. These end conditions range from simple tasks such as reporting whether or not a certain amount of time has passed to more complicated tasks like reporting if a sensor has reached a certain value. See also: [States](States.md)
 
 [ftc/electronvolts/statemachine/EndConditions.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/EndConditions.java)

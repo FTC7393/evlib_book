@@ -1,3 +1,5 @@
+> This page is out of date (unsupported feature)
+
 BasicAbstractState is a basic implementation of the [State](State.md) interface that separates the act() method into three methods: init(), isDone(), and getNextStateName().
 
 * The init() method is called the first time the state is run. You can reset timers, turn on motors, etc.

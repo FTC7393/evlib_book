@@ -1,3 +1,5 @@
+> This page is out of date (unsupported feature)
+
 We have established that all states need an "act" method, but what if the state needs a method that runs once before the main loop starts or a method that runs after the state ends? And what about moving from one state to the next?
 
 AbstractState is a more complex (than [BasicAbstractState](BasicAbstractState.md)) implementation of the [State](State.md) interface that separates the State's functionality from the transitions to other states. It separates the act() method into three methods: init(), run(), and dispose().
