@@ -1,4 +1,4 @@
-StateTimer is a simple timer that can be used in a simple state machine. It is not used in the current state machine framework, but it is here in case anyone needs it for something. For a timer that is used in the framework, see [[EndConditions]].
+StateTimer is a simple timer that can be used in a simple state machine. It is not used in the current state machine framework, but it is here in case anyone needs it for something. For a timer that is used in the framework, see [EndConditions](EndConditions.md).
 
 [ftc/electronvolts/util/StateTimer.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/StateTimer.java)
 ```java

@@ -1,4 +1,4 @@
-OptionsFile is used to store values in a file and manage the conversions of those values to certain types. You can create an OptionsFile in three ways. In all three, a [[Converters]] object is required.
+OptionsFile is used to store values in a file and manage the conversions of those values to certain types. You can create an OptionsFile in three ways. In all three, a [Converters](Converters.md) object is required.
 ```java
 OptionsFile opts = new OptionsFile(UtilConverters.getInstance(), File file); //from an existing file
 OptionsFile opts = new OptionsFile(UtilConverters.getInstance(), Map<String, String> map); //from a map of String to String
@@ -35,7 +35,7 @@ if (opts.writeToFile(new File("person.txt"))) {
 }
 ```
 
-You can also set and get arrays of values of any type supported by the given [[Converters]].
+You can also set and get arrays of values of any type supported by the given [Converters](Converters.md).
 
 ```java
 Integer[] array1 = { 1, 2, 3 };

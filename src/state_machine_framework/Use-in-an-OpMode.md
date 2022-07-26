@@ -1,4 +1,4 @@
-Note: This page is old and is no longer accurate. See the [[Simple State Machine]] page for a more up-to-date explanation.
+Note: This page is old and is no longer accurate. See the [Simple State Machine](Simple-State-Machine.md) page for a more up-to-date explanation.
 
 ## OpModes: The top level of our state machine design
 The following is a simple OpMode that demonstrates the use of the state machine builder. This OpMode is very simple; our actual autonomous program is about 10 times longer.

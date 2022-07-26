@@ -1,14 +1,14 @@
-Vector2D | [[Vector3D]]
+Vector2D | [Vector3D](Vector3D.md)
 
 ***
 
-Vector2D stores a mathematical vector in 2 dimensions. You can create it from cartesian (x, y) with `new Vector2D(x, y)` or polar (r, θ) with `Vector2D.fromPolar2D(r, theta)`, where "theta" is an [[Angle]] object.
+Vector2D stores a mathematical vector in 2 dimensions. You can create it from cartesian (x, y) with `new Vector2D(x, y)` or polar (r, θ) with `Vector2D.fromPolar2D(r, theta)`, where "theta" is an [Angle](Angle.md) object.
 
 Vector2D has 4 getters:
 * `double getX()`
 * `double getY()`
 * `double getLength()`
-* [[Angle]]` getDirection()`
+* [Angle](Angle.md)` getDirection()`
 
 A static method to compute the dot product of two Vector2D objects.
 ```java
@@ -18,7 +18,7 @@ And a static method to find the signed separation between vectors.
 ```java
 public static Angle signedAngularSeparation(Vector2D ref, Vector2D vector)
 ```
-signedAngularSeparation can be very useful when dealing with a gyro sensor that can wrap around from 360 to 0. It returns an [[Angle]] object.
+signedAngularSeparation can be very useful when dealing with a gyro sensor that can wrap around from 360 to 0. It returns an [Angle](Angle.md) object.
 
 [ftc/electronvolts/util/Vector2D.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/Vector2D.java)
 ```java

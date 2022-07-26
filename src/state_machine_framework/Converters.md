@@ -1,4 +1,4 @@
-Converters are the method that [[OptionsFile]] uses to convert values to and from strings to store in a file.
+Converters are the method that [OptionsFile](OptionsFile.md) uses to convert values to and from strings to store in a file.
 
 Converter defines the interface for actually converting something to and from a string.
 
@@ -33,7 +33,7 @@ public interface Converter<T> {
 }
 ```
 
-Converters defines a group of Converter objects for a variety of types of objects. Implementations of Converters are passed to [[OptionsFile]] to allow it to convert different types.
+Converters defines a group of Converter objects for a variety of types of objects. Implementations of Converters are passed to [OptionsFile](OptionsFile.md) to allow it to convert different types.
 
 [ftc/electronvolts/util/files/Converters.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/files/Converters.java)
 ```java

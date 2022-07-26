@@ -1,10 +1,10 @@
-[[Angle]] | [[Distance]] | [[Time]] | [[Velocity]] | **AngularVelocity**
+[Angle](Angle.md) | [Distance](Distance.md) | [Time](Time.md) | [Velocity](Velocity.md) | **AngularVelocity**
 
 ***
 
 **Units: radians, degrees, rotations _PER_ second, (nano|micro|milli)second, minute, hour, day, week, month, year**
 
-The AngularVelocity class stores an amount of angular velocity. It can be created from an [[Angle]] class and a [[Time]] class, and you can get the value from it in any of the units above. Once the AngularVelocity is created, the value cannot be changed.
+The AngularVelocity class stores an amount of angular velocity. It can be created from an [Angle](Angle.md) class and a [Time](Time.md) class, and you can get the value from it in any of the units above. Once the AngularVelocity is created, the value cannot be changed.
 
 AngularVelocity has a few math functions: abs (absolute value), signum (returns the sign), add, subtract, multiply, and divide.
 

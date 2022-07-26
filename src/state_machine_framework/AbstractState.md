@@ -1,14 +1,14 @@
 We have established that all states need an "act" method, but what if the state needs a method that runs once before the main loop starts or a method that runs after the state ends? And what about moving from one state to the next?
 
-AbstractState is a more complex (than [[BasicAbstractState]]) implementation of the [[State]] interface that separates the State's functionality from the transitions to other states. It separates the act() method into three methods: init(), run(), and dispose().
+AbstractState is a more complex (than [BasicAbstractState](BasicAbstractState.md)) implementation of the [State](State.md) interface that separates the State's functionality from the transitions to other states. It separates the act() method into three methods: init(), run(), and dispose().
 
 * The init() method is called the first time the state is run. You can reset values, turn on motors, etc.
 * The run() method is called every loop after init(). You can update motor powers, display values on telemetry, etc.
 * The dispose() method is called after the state is done. You can turn off motors, close files, etc.
 
-The way AbstractState handles the transitions to other states is by using [[StateMap]]. When it is created, a map of StateName to EndCondition is passed in.
+The way AbstractState handles the transitions to other states is by using [StateMap](StateMap.md). When it is created, a map of StateName to EndCondition is passed in.
 
-You can see examples of AbstractState (and [[BasicAbstractState]]) in the [[States]] factory class.
+You can see examples of AbstractState (and [BasicAbstractState](BasicAbstractState.md)) in the [States](States.md) factory class.
 
 [ftc/electronvolts/statemachine/AbstractState.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/AbstractState.java)
 ```java

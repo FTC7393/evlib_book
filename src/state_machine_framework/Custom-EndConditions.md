@@ -1,4 +1,4 @@
-To create your own EndConditions, all you have to do is make a class that extends [[EndConditions]].
+To create your own EndConditions, all you have to do is make a class that extends [EndConditions](EndConditions.md).
 ```java
 public class EVEndConditions extends EndConditions {
 

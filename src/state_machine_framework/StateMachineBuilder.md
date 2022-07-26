@@ -1,4 +1,4 @@
-StateMachineBuilder is responsible for setting up the linkage between the states. It stores a map of the names of the states and the state itself. It also includes convenience methods to easily add pre-defined [[States]] to the state machine, reducing the complexity of adding states. When all the states are done being added, the build method is called, which returns a [[StateMachine]] object.
+StateMachineBuilder is responsible for setting up the linkage between the states. It stores a map of the names of the states and the state itself. It also includes convenience methods to easily add pre-defined [States](States.md) to the state machine, reducing the complexity of adding states. When all the states are done being added, the build method is called, which returns a [StateMachine](StateMachine.md) object.
 
 [ftc/electronvolts/statemachine/StateMachineBuilder.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/StateMachineBuilder.java)
 ```java

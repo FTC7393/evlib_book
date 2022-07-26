@@ -1,12 +1,12 @@
-AnalogInputScaler takes an [[InputExtractor]] of type Double, and a [[Function|Functions]] to scale the input with.
+AnalogInputScaler takes an [InputExtractor](InputExtractor.md) of type Double, and a [Function](Functions.md) to scale the input with.
 
-* The update() method gets the value from the [[InputExtractor]] and feeds it through the [[Function|Functions]]
+* The update() method gets the value from the [InputExtractor](InputExtractor.md) and feeds it through the [Function](Functions.md)
 * The getValue() method returns the scaled value as it was computed by the last call to update()
 * The getRawValue() method returns the raw value as it was retrieved by the last call to update()
 
-AnalogInputScaler also implements [[InputExtractor]]\<Double\>, which means it can be passed in to a [[Logging|Logger]] function, for example.
+AnalogInputScaler also implements [InputExtractor](InputExtractor.md)\<Double\>, which means it can be passed in to a [Logging](Logger.md) function, for example.
 
-See also: [[DigitalInputEdgeDetector]]
+See also: [DigitalInputEdgeDetector](DigitalInputEdgeDetector.md)
 
 [ftc/electronvolts/util/AnalogInputScaler.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/AnalogInputScaler.java)
 ```java

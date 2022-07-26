@@ -1,4 +1,4 @@
-PIDController implements [[ControlLoop]]. It computes the correction on an output based on an input and 4 constants: P, I, D, and maximum output. These 4 constants are given when PIDController is created.
+PIDController implements [ControlLoop](ControlLoop.md). It computes the correction on an output based on an input and 4 constants: P, I, D, and maximum output. These 4 constants are given when PIDController is created.
 
 The main function is computeCorrection. It takes the target position (setPoint) and the measured actual position (input) as parameters. It finds the delta time (timeChange), and from that calculates the change in the integral-term (iTerm) and the change in input per time (dInput). Then it calculates output:
 ```

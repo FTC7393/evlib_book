@@ -1,12 +1,12 @@
-DigitalInputEdgeDetector takes an [[InputExtractor]] of type Boolean. It detects changes in state between calls of the update() method.
+DigitalInputEdgeDetector takes an [InputExtractor](InputExtractor.md) of type Boolean. It detects changes in state between calls of the update() method.
 
 * The justPresssed() method returns true if the input has transitioned from false to true between the last two calls of update().
 * The justReleased() method returns true if the input has transitioned from true to false between the last two calls of update().
 * The isPressed() method returns the value of the input at the last call of update(), regardless of any transitions.
 
-DigitalInputEdgeDetector also implements [[InputExtractor]]\<Boolean\> and returns the value of the input in the getValue() method.
+DigitalInputEdgeDetector also implements [InputExtractor](InputExtractor.md)\<Boolean\> and returns the value of the input in the getValue() method.
 
-See also: [[AnalogInputScaler]]
+See also: [AnalogInputScaler](AnalogInputScaler.md)
 
 [ftc/electronvolts/util/DigitalInputEdgeDetector.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/DigitalInputEdgeDetector.java)
 ```java

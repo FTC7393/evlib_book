@@ -1,4 +1,4 @@
-StateMachine is responsible for managing the linkage of the states while running. It is usually created from a [[StateMachineBuilder]]. To run it, call the act() method each time through the loop. This will have the current [[State|The State Interface]] act and then determine the next State based on what the current State returned. For debugging, you can call getCurrentStateName() each time in the loop and [[store it to a file|Logger]] or display it on the telemetry.
+StateMachine is responsible for managing the linkage of the states while running. It is usually created from a [StateMachineBuilder](StateMachineBuilder.md). To run it, call the act() method each time through the loop. This will have the current [State](State.md) act and then determine the next State based on what the current State returned. For debugging, you can call getCurrentStateName() each time in the loop and [store it to a file](Logger.md) or display it on the telemetry.
 
 [ftc/electronvolts/statemachine/StateMachine.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/StateMachine.java)
 ```java

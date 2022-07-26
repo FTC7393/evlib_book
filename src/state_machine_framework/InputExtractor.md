@@ -2,10 +2,10 @@ InputExtractor is an interface that can be any type. It has one method, getValue
 
 InputExtractor is used to get inputs for a variety of uses:
 
-* [[Logging|Logger]]
-* [[Digital edge detection|DigitalInputEdgeDetector]]
-* [[Analog scaling|AnalogInputScaler]]
-* Comparing inputs in [[EndConditions]]
+* [Logging](Logger.md)
+* [Digital edge detection](DigitalInputEdgeDetector.md)
+* [Analog scaling](AnalogInputScaler.md)
+* Comparing inputs in [EndConditions](EndConditions.md)
 
 [ftc/electronvolts/util/InputExtractor.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/InputExtractor.java)
 ```java

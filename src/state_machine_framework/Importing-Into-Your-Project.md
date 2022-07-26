@@ -5,4 +5,4 @@ Using the state machine framework in the your project is extremely simple!
 3. Add a line to the gradle build dependencies (inside  `<app name>/FtcRobotController/build.release.gradle` in the 'dependencies' section): `compile files('../libs/state-machine-framework-<latest version>.jar')` This will include the jar file as a dependency for the project.
 4. Rebuild the gradle project.
 
-To get started on using the framework, you can see the page for the [[State]] interface.
+To get started on using the framework, you can see the page for the [State](State.md) interface.

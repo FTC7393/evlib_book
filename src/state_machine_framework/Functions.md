@@ -1,4 +1,4 @@
-Functions in the state-machine-framework are defined as interfaces. The interface has one method, `double f(double x)`, that defines the input and output of the function. Functions are used in [[AnalogInputScaler]] to scale inputs such as joystick values.
+Functions in the state-machine-framework are defined as interfaces. The interface has one method, `double f(double x)`, that defines the input and output of the function. Functions are used in [AnalogInputScaler](AnalogInputScaler.md) to scale inputs such as joystick values.
 
 [ftc/electronvolts/util/Function.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/Function.java)
 ```java

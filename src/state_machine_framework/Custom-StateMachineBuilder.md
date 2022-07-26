@@ -1,4 +1,4 @@
-Make a class that extends [[StateMachineBuilder]] and calls the superconstructor.
+Make a class that extends [StateMachineBuilder](StateMachineBuilder.md) and calls the superconstructor.
 ```java
 public class MyStateMachineBuilder extends StateMachineBuilder {
     public MyStateMachineBuilder(StateName firstStateName) {
@@ -8,7 +8,7 @@ public class MyStateMachineBuilder extends StateMachineBuilder {
 
 ```
 
-Then add a convenience method to it that uses your method you made in [[MyStates|Custom States]].
+Then add a convenience method to it that uses your method you made in [MyStates](Custom States.md).
 ```java
 public class MyStateMachineBuilder extends StateMachineBuilder {
     public MyStateMachineBuilder(StateName firstStateName) {
@@ -47,4 +47,4 @@ public class MyStateMachineBuilder extends StateMachineBuilder {
 
 ```
 
-The next step is to create [[Custom EndConditions]].
+The next step is to create [Custom EndConditions](Custom-EndConditions.md).

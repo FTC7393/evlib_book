@@ -1,4 +1,4 @@
-ControlLoop defines an interface for control loops such as a [[PID controller|PIDController]] or a [[proportional controller|ProportionalController]]. The computeCorrection function takes a target value, or setPoint, and an actual value, or input. It computes the power necessary for a motor or other output to bring the input closer to the setPoint.
+ControlLoop defines an interface for control loops such as a [PID controller](PIDController.md) or a [proportional controller](ProportionalController.md). The computeCorrection function takes a target value, or setPoint, and an actual value, or input. It computes the power necessary for a motor or other output to bring the input closer to the setPoint.
 
 The initialize() function is meant to reset the persistent (stored between loop cycles) variables. It should be called when the controller has been off for a while.
 

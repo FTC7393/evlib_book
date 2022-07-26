@@ -1,4 +1,4 @@
-ProportionalController implements [[ControlLoop]]. It provides a curve that is shaped like the following graph (parameters `new ProportionalController(0.2, 0.05, 0.1, 0.5)`)
+ProportionalController implements [ControlLoop](ControlLoop.md). It provides a curve that is shaped like the following graph (parameters `new ProportionalController(0.2, 0.05, 0.1, 0.5)`)
 
 ![graph](https://github.com/FTC7393/state-machine-framework/blob/master/images/PropGraph.png?raw=true)
 

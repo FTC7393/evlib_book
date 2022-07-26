@@ -1,4 +1,4 @@
-First, create a class that extends the [[States]] factory class. It will inherit all the methods from [[States]].
+First, create a class that extends the [States](States.md) factory class. It will inherit all the methods from [States](States.md).
 ```java
 public class MyStates extends States {
 
@@ -45,4 +45,4 @@ public class MyStates extends States {
     }
 ```
 
-The next step is to create a [[Custom StateMachineBuilder]].
+The next step is to create a [Custom StateMachineBuilder](Custom-StateMachineBuilder.md).

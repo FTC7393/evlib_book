@@ -7,7 +7,7 @@ Let's say you have a state machine drawing that looks like this:
 |_______/      |____________|      \______/
 ```
 
-To create a state machine based on this diagram, first create an enum that implements [[StateName|The State Interface]] with your list of states:
+To create a state machine based on this diagram, first create an enum that implements [StateName](The State Interface.md) with your list of states:
 
 ```java
 enum S implements StateName {
@@ -16,7 +16,7 @@ enum S implements StateName {
 };
 ```
 
-Then create a [[StateMachineBuilder]], giving it the state to start with:
+Then create a [StateMachineBuilder](StateMachineBuilder.md), giving it the state to start with:
 ```java
 StateMachineBuilder b = new StateMachineBuilder(S.WAIT);
 ```
@@ -65,4 +65,4 @@ State: STOP
 
 Congratulations! You made your first state machine!
 
-The next step is to create [[Custom States]].
+The next step is to create [Custom States](Custom-States.md).

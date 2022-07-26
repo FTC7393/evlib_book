@@ -1,4 +1,4 @@
-**Angle** | [[Distance]] | [[Time]] | [[Velocity]] | [[AngularVelocity]]
+**Angle** | [Distance](Distance.md) | [Time](Time.md) | [Velocity](Velocity.md) | [AngularVelocity](AngularVelocity.md)
 
 ***
 

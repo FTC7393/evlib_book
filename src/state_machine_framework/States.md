@@ -1,4 +1,4 @@
-The States factory class is used to keep all the implementations of the [[State]] interface in a central location. All of these implementations use [[BasicAbstractState]] or [[AbstractState]]. These factory methods are used in the [[StateMachineBuilder]].
+The States factory class is used to keep all the implementations of the [State](State.md) interface in a central location. All of these implementations use [BasicAbstractState](BasicAbstractState.md) or [AbstractState](AbstractState.md). These factory methods are used in the [StateMachineBuilder](StateMachineBuilder.md).
 
 [ftc/electronvolts/statemachine/States.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/States.java)
 ```java

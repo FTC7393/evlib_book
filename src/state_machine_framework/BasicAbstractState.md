@@ -1,10 +1,10 @@
-BasicAbstractState is a basic implementation of the [[State]] interface that separates the act() method into three methods: init(), isDone(), and getNextStateName().
+BasicAbstractState is a basic implementation of the [State](State.md) interface that separates the act() method into three methods: init(), isDone(), and getNextStateName().
 
 * The init() method is called the first time the state is run. You can reset timers, turn on motors, etc.
 * The isDone() method is called every loop after init(). You can check sensors, timers, or encoders, and return true when the state needs to exit.
 * The getNextStateName() method is called after the state is done (when the isDone() method returns true). Here you can decide what state to enter next, or have one state that is always next.
 
-Examples of BasicAbstractState (and [[AbstractState]]) are found in the [[States]] factory class.
+Examples of BasicAbstractState (and [AbstractState](AbstractState.md)) are found in the [States](States.md) factory class.
 
 [ftc/electronvolts/statemachine/BasicAbstractState.java](https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/BasicAbstractState.java)
 ```java

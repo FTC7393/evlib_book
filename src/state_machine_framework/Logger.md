@@ -6,7 +6,7 @@ When you create it, you pass in:
 * The file's extension (e.g. `".csv"`)
 * A list of `Logger.Column` objects, which contain
     * A column title to be put at the top of the file
-    * An [[InputExtractor]] of any type
+    * An [InputExtractor](InputExtractor.md) of any type
 
 Another column is automatically added at the beginning that logs the time in milliseconds
 

@@ -1,10 +1,10 @@
-[[Angle]] | [[Distance]] | [[Time]] | **Velocity** | [[AngularVelocity]]
+[Angle](Angle.md) | [Distance](Distance.md) | [Time](Time.md) | **Velocity** | [AngularVelocity](AngularVelocity.md)
 
 ***
 
 **Units: meters, (kilo|centi|milli|micro|nano)meters, feet, inches, yards, miles, nautical miles _PER_ second, (nano|micro|milli)second, minute, hour, day, week, month, year**
 
-The Velocity class stores an amount of velocity. It can be created from a [[Distance]] class and a [[Time]] class, and you can get the value from it in any of the units above. Once the Velocity is created, the value cannot be changed.
+The Velocity class stores an amount of velocity. It can be created from a [Distance](Distance.md) class and a [Time](Time.md) class, and you can get the value from it in any of the units above. Once the Velocity is created, the value cannot be changed.
 
 Velocity has a few math functions: abs (absolute value), signum (returns the sign), add, subtract, multiply, and divide.
 

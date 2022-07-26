@@ -1,16 +1,16 @@
-[[Vector2D]] | Vector3D
+[Vector2D](Vector2D.md) | Vector3D
 
 ***
 
-Vector3D stores a mathematical vector in 3 dimensions. You can create it from cartesian (x, y, z) with `new Vector3D(x, y, z)`, spherical (r, θ, φ) using `Vector3D(magnitude, theta, phi)`, or polar (r, θ) using only 2 dimensions with `Vector2D.fromPolar2D(r, theta)`, where "theta" is an [[Angle]] object.
+Vector3D stores a mathematical vector in 3 dimensions. You can create it from cartesian (x, y, z) with `new Vector3D(x, y, z)`, spherical (r, θ, φ) using `Vector3D(magnitude, theta, phi)`, or polar (r, θ) using only 2 dimensions with `Vector2D.fromPolar2D(r, theta)`, where "theta" is an [Angle](Angle.md) object.
 
 Vector3D has 6 getters:
 * `double getX()`
 * `double getY()`
 * `double getZ()`
 * `double getLength()`
-* [[Angle]]`getTheta()`
-* [[Angle]]`getPhi()`
+* [Angle](Angle.md)`getTheta()`
+* [Angle](Angle.md)`getPhi()`
 
 And static methods to compute the dot product, cross product, and separation of two Vector3D objects.
 ```java
