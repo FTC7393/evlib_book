@@ -1,3 +1,5 @@
+> This page is out of date
+
 Converters are the method that [OptionsFile](OptionsFile.md) uses to convert values to and from strings to store in a file.
 
 Converter defines the interface for actually converting something to and from a string.
