@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>factory class for states - FTC Programming with ElectronVolts</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOp.html"><strong aria-hidden="true">3.2.</strong> abstract opmodes</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractTeleOp.html"><strong aria-hidden="true">3.3.</strong> abstract teleop</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractAutoOp.html"><strong aria-hidden="true">3.4.</strong> abstract autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractServoTuneOp.html"><strong aria-hidden="true">3.5.</strong> tuning the servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOptionsOp.html"><strong aria-hidden="true">3.6.</strong> selecting options for autonomous</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/EVStates.html"><strong aria-hidden="true">4.1.</strong> EVStates factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVEndConditions.html"><strong aria-hidden="true">4.2.</strong> EVEndConditions factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVStateMachineBuilder.html"><strong aria-hidden="true">4.3.</strong> EVStateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/State.html"><strong aria-hidden="true">4.4.</strong> the State interface</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Simple-State-Machine.html"><strong aria-hidden="true">4.5.</strong> Simple State Machine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-States.html"><strong aria-hidden="true">4.6.</strong> Custom States</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-StateMachineBuilder.html"><strong aria-hidden="true">4.7.</strong> Custom StateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-EndConditions.html"><strong aria-hidden="true">4.8.</strong> Custom EndConditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/BasicAbstractState.html"><strong aria-hidden="true">4.9.</strong> states with built-in end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/EndCondition.html"><strong aria-hidden="true">4.10.</strong> separate end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMap.html"><strong aria-hidden="true">4.11.</strong> linking end conditions with next states</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AbstractState.html"><strong aria-hidden="true">4.12.</strong> states with flexible end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/States.html" class="active"><strong aria-hidden="true">4.13.</strong> factory class for states</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/EndConditions.html"><strong aria-hidden="true">4.14.</strong> factory class for end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMachineBuilder.html"><strong aria-hidden="true">4.15.</strong> conveniently building a statemachine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMachine.html"><strong aria-hidden="true">4.16.</strong> running the state machine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/DeadZone.html"><strong aria-hidden="true">4.17.</strong> dead-zone interface and factory class</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/ControlLoop.html"><strong aria-hidden="true">5.1.</strong> control loop interface</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/PIDController.html"><strong aria-hidden="true">5.1.1.</strong> PID controller</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/ProportionalController.html"><strong aria-hidden="true">5.1.2.</strong> proportional controller</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Motors and Movement</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Motor-and-MotorEnc.html"><strong aria-hidden="true">5.2.1.</strong> the Motor interfaces</a></li><li class="chapter-item expanded "><a href="../evlib/Creating-Motors.html"><strong aria-hidden="true">5.2.2.</strong> creating motors and continuous servos</a></li><li class="chapter-item expanded "><a href="../evlib/NMotors.html"><strong aria-hidden="true">5.2.3.</strong> grouping motors</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Wheels.html"><strong aria-hidden="true">5.2.4.</strong> driving mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Control.html"><strong aria-hidden="true">5.2.5.</strong> control of mecanum wheels</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Sensors</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Analog-Sensors.html"><strong aria-hidden="true">5.3.1.</strong> analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/AveragedSensor.html"><strong aria-hidden="true">5.3.2.</strong> averaging analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Digital-Sensors.html"><strong aria-hidden="true">5.3.3.</strong> digital sensors</a></li><li class="chapter-item expanded "><a href="../evlib/CalibratedLineSensor.html"><strong aria-hidden="true">5.3.4.</strong> line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/DoubleLineSensor.html"><strong aria-hidden="true">5.3.5.</strong> double line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/ColorSensor.html"><strong aria-hidden="true">5.3.6.</strong> color sensor</a></li><li class="chapter-item expanded "><a href="../evlib/LineFinder.html"><strong aria-hidden="true">5.3.7.</strong> line finder</a></li></ol></li><li class="chapter-item expanded "><a href="../evlib/GamepadManager.html"><strong aria-hidden="true">5.4.</strong> gamepad button edge detection and joystick scaling</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Utilities</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Math</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/Angle.html"><strong aria-hidden="true">6.1.1.</strong> angle unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Distance.html"><strong aria-hidden="true">6.1.2.</strong> distance unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Time.html"><strong aria-hidden="true">6.1.3.</strong> time unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Velocity.html"><strong aria-hidden="true">6.1.4.</strong> velocity unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AngularVelocity.html"><strong aria-hidden="true">6.1.5.</strong> angular velocity unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Vector2D.html"><strong aria-hidden="true">6.1.6.</strong> 2-D Vectors</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Vector3D.html"><strong aria-hidden="true">6.1.7.</strong> 3-D Vectors</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Utility.html"><strong aria-hidden="true">6.1.8.</strong> value limiting functions</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Debugging</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Telem.html"><strong aria-hidden="true">6.2.1.</strong> global telemetry</a></li><li class="chapter-item expanded "><a href="../evlib/StepTimer.html"><strong aria-hidden="true">6.2.2.</strong> step timer for logging</a></li><li class="chapter-item expanded "><a href="../evlib/FileUtil.html"><strong aria-hidden="true">6.2.3.</strong> file utilities</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Logger.html"><strong aria-hidden="true">6.2.4.</strong> file logging</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/OptionsFile.html"><strong aria-hidden="true">6.2.5.</strong> storing values in a file</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Primitives</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/InputExtractor.html"><strong aria-hidden="true">6.3.1.</strong> InputExtractor</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/DigitalInputEdgeDetector.html"><strong aria-hidden="true">6.3.2.</strong> digital edge detection</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AnalogInputScaler.html"><strong aria-hidden="true">6.3.3.</strong> analog scaling</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Functions.html"><strong aria-hidden="true">6.3.4.</strong> function interface and factory class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/ResultReceiver.html"><strong aria-hidden="true">6.3.5.</strong> passing results between threads</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/TeamColor.html"><strong aria-hidden="true">6.3.6.</strong> team color</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/MatchTimer.html"><strong aria-hidden="true">6.3.7.</strong> timing a match</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/StateTimer.html"><strong aria-hidden="true">6.3.7.1.</strong> simple timer</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../metaprogramming/options.html"><strong aria-hidden="true">6.4.</strong> Setting Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/Converters.html"><strong aria-hidden="true">6.4.1.</strong> adding more conversions to the OptionsFile</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Home.html"><strong aria-hidden="true">7.</strong> Evlib [WIP]</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Importing-Into-Your-Project.html"><strong aria-hidden="true">7.1.</strong> Importing Into Your Project</a></li><li class="chapter-item expanded "><a href="../evlib/Sample-Code.html"><strong aria-hidden="true">7.2.</strong> Sample Code</a></li><li class="chapter-item expanded "><a href="../evlib/Using-EVLib-Minimally.html"><strong aria-hidden="true">7.3.</strong> Using EVLib Minimally</a></li><li class="chapter-item expanded "><a href="../evlib/Logging-Example.html"><strong aria-hidden="true">7.4.</strong> Logging Example</a></li><li class="chapter-item expanded "><a href="../evlib/Robot-Configuration.html"><strong aria-hidden="true">7.5.</strong> Robot Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-TeleOp-Program.html"><strong aria-hidden="true">7.6.</strong> Basic TeleOp Program</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-Autonomous-Program.html"><strong aria-hidden="true">7.7.</strong> Basic Autonomous Program</a></li><li class="chapter-item expanded "><a href="../evlib/Customizing-StateMachineBuilder.html"><strong aria-hidden="true">7.8.</strong> Customizing StateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../evlib/Servo-Presets.html"><strong aria-hidden="true">7.9.</strong> Servo Presets</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-the-Configuration.html"><strong aria-hidden="true">7.10.</strong> Adding Servos to the Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-TeleOp.html"><strong aria-hidden="true">7.11.</strong> Adding Servos to TeleOp</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-Autonomous.html"><strong aria-hidden="true">7.12.</strong> Adding Servos to Autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.html"><strong aria-hidden="true">7.13.</strong> Vuforia and OpenCV Beacon Color Detection</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Features.html">Evlib Feature Index [WIP]</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">FTC Programming with ElectronVolts</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <blockquote>
+<p>This page is out of date (unsupported feature)</p>
+</blockquote>
+<p>The States factory class is used to keep all the implementations of the <a href="State.html">State</a> interface in a central location. All of these implementations use <a href="BasicAbstractState.html">BasicAbstractState</a> or <a href="AbstractState.html">AbstractState</a>. These factory methods are used in the <a href="StateMachineBuilder.html">StateMachineBuilder</a>.</p>
+<p><a href="https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/statemachine/States.java">ftc/electronvolts/statemachine/States.java</a></p>
+<pre><code class="language-java">package ftc.electronvolts.statemachine;
+
+import java.util.Map;
+
+import ftc.electronvolts.util.ResultReceiver;
+
+/**
+ * This file was made by the electronVolts, FTC team 7393
+ *
+ * A factory class containing methods that return several useful states.
+ *
+ * To write your own State factory, make a class that extends this one and add
+ * your own methods. It will inherit all these methods as well, so that when you
+ * use your class, you will have access to all these methods and your own in one
+ * place.
+ */
+public class States {
+    /**
+     * Creates a state machine inside a state of another state machine
+     * &quot;Yo, dawg, we heard you like states so we put a state machine inside a
+     * state of another state machine so your state can act while your state
+     * machine acts, dawg.&quot;
+     * 
+     * @param subStateToState map that links the sub states to the states in the main state machine
+     * @param stateMachineBuilder the builder to add the sub-states to
+     * @return the created State
+     */
+    public static State subStates(final Map&lt;StateName, StateName&gt; subStateToState, final StateMachineBuilder stateMachineBuilder) {
+        for (Map.Entry&lt;StateName, StateName&gt; entry : subStateToState.entrySet()) {
+            StateName subState = entry.getKey();
+            stateMachineBuilder.addStop(subState);
+        }
+        final StateMachine stateMachine = stateMachineBuilder.build();
+        return new BasicAbstractState() {
+            private StateName nextStateName;
+
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                stateMachine.act();
+                for (Map.Entry&lt;StateName, StateName&gt; entry : subStateToState.entrySet()) {
+                    StateName subState = entry.getKey();
+                    StateName state = entry.getValue();
+                    // if the current state is one of the ending sub-states
+                    if (stateMachine.getCurrentStateName() == subState) {
+                        // go to the corresponding super-state
+                        nextStateName = state;
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                return nextStateName;
+            }
+        };
+    }
+
+    /**
+     * &quot;Go back from whence you came -- and never return!&quot;
+     * 
+     * A state that never returns
+     *
+     * @return the created state
+     */
+    public static State stop() {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                return false;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                return null;
+            }
+        };
+    }
+
+    /**
+     * &quot;An empty-head thinks mischief is fun, but a mindful person relishes wisdom.&quot;
+     * (Proverbs 2^10-1)
+     * 
+     * An empty state.
+     *
+     * @param transitions the transitions to be considered
+     * @return the created State
+     */
+    public static State empty(Map&lt;StateName, EndCondition&gt; transitions) {
+        return new AbstractState(transitions) {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public void run() {
+            }
+
+            @Override
+            public void dispose() {
+            }
+        };
+    }
+
+    /**
+     * &quot;Stop! The cup is full!&quot; said Tokusan.
+     * 
+     * &quot;Exactly,&quot; said Master Ryutan. &quot;You are like this cup; you are full of
+     * ideas. You come and ask for teaching, but your cup is full; I can't put
+     * anything in. Before I can teach you, you'll have to empty your cup.&quot;
+     * 
+     * An empty state.
+     *
+     * @param nextStateName the next state to be run
+     * @return the created State
+     */
+    public static State empty(final StateName nextStateName) {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                return true;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                return nextStateName;
+            }
+        };
+    }
+
+    /**
+     * &quot;She set up a great loom in her palace, and set to weaving a web of
+     * threads long and fine. Then she said to us: 'Young men, my suitors
+     * now that the great Odysseus has perished, wait, though you are eager
+     * to marry me, until I finish this web, so that my weaving will not be
+     * useless and wasted.'&quot;
+     * ~Penelope, the Odyssey
+     * 
+     * A state used to run a thread. Useful for off-loading computer intensive
+     * tasks such as image processing.
+     *
+     * @param nextStateName the next state to be run immediately
+     * @param thread the thread to be run at the start of the state
+     * @return the created State
+     */
+    public static State runThread(final StateName nextStateName, final Thread thread) {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+                thread.start();
+            }
+
+            @Override
+            public boolean isDone() {
+                return true;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                return nextStateName;
+            }
+        };
+    }
+
+    /**
+     * &quot;The power of the Executive Branch is vested in the President of the
+     * United States, who also acts as head of state and Commander-in-Chief of
+     * the armed forces.&quot;
+     * 
+     * This is used to do branching and decision trees in the state machine
+     * can be used for doing different things depending on which side of the
+     * field you are on
+     *
+     * @param trueStateName the state to go to if the condition is true
+     * @param falseStateName the state to go to if the condition is false
+     * @param condition the boolean to decide which branch to go to
+     * @return the created State
+     */
+    public static State branch(final StateName trueStateName, final StateName falseStateName, final boolean condition) {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                return true;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                if (condition) {
+                    return trueStateName;
+                } else {
+                    return falseStateName;
+                }
+            }
+        };
+    }
+
+    /**
+     * &quot;Established by Article I of the Constitution, the Legislative Branch
+     * consists of the House of Representatives and the Senate, which together
+     * form the United States Congress.&quot;
+     * 
+     * This is used to do branching and decision trees in the state machine
+     * can be used for doing different things depending on which side of the
+     * field you are on
+     *
+     * @param trueStateName the state to go to if the condition is true
+     * @param falseStateName the state to go to if the condition is false
+     * @param nullStateName the state to go to if the condition is null
+     * @param condition the boolean to decide which branch to go to
+     * @return the created State
+     */
+    public static State branch(final StateName trueStateName, final StateName falseStateName, final StateName nullStateName, final Boolean condition) {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                return true;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                if (condition == null) {
+                    return nullStateName;
+                } else if (condition) {
+                    return trueStateName;
+                } else {
+                    return falseStateName;
+                }
+            }
+        };
+    }
+
+    /**
+     * &quot;Where the Executive and Legislative branches are elected by the people,
+     * members of the Judicial Branch are appointed by the President and
+     * confirmed by the Senate.&quot;
+     * 
+     * This is used to do branching and decision trees in the state machine
+     * using a result
+     * acquired while it is running, and to communicate between threads
+     *
+     * @param trueStateName the state to go to if the receiver returns true
+     * @param falseStateName the state to go to if the receiver returns false
+     * @param nullStateName the state to go to if the receiver returns null
+     * @param receiver the receiver that decides which branch to go to
+     * @return the created State
+     */
+    public static State branch(final StateName trueStateName, final StateName falseStateName, final StateName nullStateName, final ResultReceiver&lt;Boolean&gt; receiver) {
+        return new BasicAbstractState() {
+            @Override
+            public void init() {
+            }
+
+            @Override
+            public boolean isDone() {
+                return receiver.isReady();
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                if (receiver.getValue() == null) {
+                    return nullStateName;
+                } else if (receiver.getValue()) {
+                    return trueStateName;
+                } else {
+                    return falseStateName;
+                }
+            }
+        };
+    }
+
+    /**
+     * Count von Count: Five bananas. Six bananas. SEVEN BANANAS!
+     * [thunder strikes]
+     * Count von Count: Ah, ah, ah. Now, that was silly. Wouldn't you agree, my
+     * bats? Ah, ah, ah.
+     * 
+     * Moves to continueStateName for the first n times it is called, then moves
+     * to doneStateName after that
+     * 
+     * @param continueStateName will be transitioned to first
+     * @param doneStateName will be transitioned to after
+     * @param n the number of times to return continueStateName
+     * @return the created State
+     */
+    public static State count(final StateName continueStateName, final StateName doneStateName, final int n) {
+        return new BasicAbstractState() {
+            int i = 0;
+
+            @Override
+            public void init() {
+                i++;
+            }
+
+            @Override
+            public boolean isDone() {
+                return true;
+            }
+
+            @Override
+            public StateName getNextStateName() {
+                return i &lt;= n ? continueStateName : doneStateName;
+            }
+        };
+    }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../state_machine_framework/AbstractState.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../state_machine_framework/EndConditions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../state_machine_framework/AbstractState.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../state_machine_framework/EndConditions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

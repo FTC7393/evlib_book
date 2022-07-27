@@ -1,0 +1,676 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>storing values in a file - FTC Programming with ElectronVolts</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../intro/index.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../intro/setup.html"><strong aria-hidden="true">1.1.</strong> Setup</a></li><li class="chapter-item expanded "><a href="../intro/ftc_framework.html"><strong aria-hidden="true">1.2.</strong> The FTC Framework</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Starting Out</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/index.html"><strong aria-hidden="true">2.1.</strong> A Starter Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../starter/program/config.html"><strong aria-hidden="true">2.1.1.</strong> Robot Config</a></li><li class="chapter-item expanded "><a href="../starter/program/tele_op.html"><strong aria-hidden="true">2.1.2.</strong> TeleOp Program</a></li><li class="chapter-item expanded "><a href="../starter/program/install.html"><strong aria-hidden="true">2.1.3.</strong> Compile and Install</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../opmodes/index.html"><strong aria-hidden="true">3.</strong> Operation Modes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../opmodes/base.html"><strong aria-hidden="true">3.1.</strong> Base Operation Mode</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOp.html"><strong aria-hidden="true">3.2.</strong> abstract opmodes</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractTeleOp.html"><strong aria-hidden="true">3.3.</strong> abstract teleop</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractAutoOp.html"><strong aria-hidden="true">3.4.</strong> abstract autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractServoTuneOp.html"><strong aria-hidden="true">3.5.</strong> tuning the servo presets</a></li><li class="chapter-item expanded "><a href="../evlib/AbstractOptionsOp.html"><strong aria-hidden="true">3.6.</strong> selecting options for autonomous</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> The State Machine</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/EVStates.html"><strong aria-hidden="true">4.1.</strong> EVStates factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVEndConditions.html"><strong aria-hidden="true">4.2.</strong> EVEndConditions factory class</a></li><li class="chapter-item expanded "><a href="../evlib/EVStateMachineBuilder.html"><strong aria-hidden="true">4.3.</strong> EVStateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/State.html"><strong aria-hidden="true">4.4.</strong> the State interface</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Simple-State-Machine.html"><strong aria-hidden="true">4.5.</strong> Simple State Machine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-States.html"><strong aria-hidden="true">4.6.</strong> Custom States</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-StateMachineBuilder.html"><strong aria-hidden="true">4.7.</strong> Custom StateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Custom-EndConditions.html"><strong aria-hidden="true">4.8.</strong> Custom EndConditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/BasicAbstractState.html"><strong aria-hidden="true">4.9.</strong> states with built-in end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/EndCondition.html"><strong aria-hidden="true">4.10.</strong> separate end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMap.html"><strong aria-hidden="true">4.11.</strong> linking end conditions with next states</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AbstractState.html"><strong aria-hidden="true">4.12.</strong> states with flexible end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/States.html"><strong aria-hidden="true">4.13.</strong> factory class for states</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/EndConditions.html"><strong aria-hidden="true">4.14.</strong> factory class for end conditions</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMachineBuilder.html"><strong aria-hidden="true">4.15.</strong> conveniently building a statemachine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/StateMachine.html"><strong aria-hidden="true">4.16.</strong> running the state machine</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/DeadZone.html"><strong aria-hidden="true">4.17.</strong> dead-zone interface and factory class</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Hardware</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/ControlLoop.html"><strong aria-hidden="true">5.1.</strong> control loop interface</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/PIDController.html"><strong aria-hidden="true">5.1.1.</strong> PID controller</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/ProportionalController.html"><strong aria-hidden="true">5.1.2.</strong> proportional controller</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Motors and Movement</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Motor-and-MotorEnc.html"><strong aria-hidden="true">5.2.1.</strong> the Motor interfaces</a></li><li class="chapter-item expanded "><a href="../evlib/Creating-Motors.html"><strong aria-hidden="true">5.2.2.</strong> creating motors and continuous servos</a></li><li class="chapter-item expanded "><a href="../evlib/NMotors.html"><strong aria-hidden="true">5.2.3.</strong> grouping motors</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Wheels.html"><strong aria-hidden="true">5.2.4.</strong> driving mecanum wheels</a></li><li class="chapter-item expanded "><a href="../evlib/Mecanum-Control.html"><strong aria-hidden="true">5.2.5.</strong> control of mecanum wheels</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.3.</strong> Sensors</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Analog-Sensors.html"><strong aria-hidden="true">5.3.1.</strong> analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/AveragedSensor.html"><strong aria-hidden="true">5.3.2.</strong> averaging analog sensors</a></li><li class="chapter-item expanded "><a href="../evlib/Digital-Sensors.html"><strong aria-hidden="true">5.3.3.</strong> digital sensors</a></li><li class="chapter-item expanded "><a href="../evlib/CalibratedLineSensor.html"><strong aria-hidden="true">5.3.4.</strong> line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/DoubleLineSensor.html"><strong aria-hidden="true">5.3.5.</strong> double line sensor</a></li><li class="chapter-item expanded "><a href="../evlib/ColorSensor.html"><strong aria-hidden="true">5.3.6.</strong> color sensor</a></li><li class="chapter-item expanded "><a href="../evlib/LineFinder.html"><strong aria-hidden="true">5.3.7.</strong> line finder</a></li></ol></li><li class="chapter-item expanded "><a href="../evlib/GamepadManager.html"><strong aria-hidden="true">5.4.</strong> gamepad button edge detection and joystick scaling</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Utilities</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">6.1.</strong> Math</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/Angle.html"><strong aria-hidden="true">6.1.1.</strong> angle unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Distance.html"><strong aria-hidden="true">6.1.2.</strong> distance unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Time.html"><strong aria-hidden="true">6.1.3.</strong> time unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Velocity.html"><strong aria-hidden="true">6.1.4.</strong> velocity unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AngularVelocity.html"><strong aria-hidden="true">6.1.5.</strong> angular velocity unit class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Vector2D.html"><strong aria-hidden="true">6.1.6.</strong> 2-D Vectors</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Vector3D.html"><strong aria-hidden="true">6.1.7.</strong> 3-D Vectors</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Utility.html"><strong aria-hidden="true">6.1.8.</strong> value limiting functions</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.2.</strong> Debugging</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Telem.html"><strong aria-hidden="true">6.2.1.</strong> global telemetry</a></li><li class="chapter-item expanded "><a href="../evlib/StepTimer.html"><strong aria-hidden="true">6.2.2.</strong> step timer for logging</a></li><li class="chapter-item expanded "><a href="../evlib/FileUtil.html"><strong aria-hidden="true">6.2.3.</strong> file utilities</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Logger.html"><strong aria-hidden="true">6.2.4.</strong> file logging</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/OptionsFile.html" class="active"><strong aria-hidden="true">6.2.5.</strong> storing values in a file</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Primitives</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/InputExtractor.html"><strong aria-hidden="true">6.3.1.</strong> InputExtractor</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/DigitalInputEdgeDetector.html"><strong aria-hidden="true">6.3.2.</strong> digital edge detection</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/AnalogInputScaler.html"><strong aria-hidden="true">6.3.3.</strong> analog scaling</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/Functions.html"><strong aria-hidden="true">6.3.4.</strong> function interface and factory class</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/ResultReceiver.html"><strong aria-hidden="true">6.3.5.</strong> passing results between threads</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/TeamColor.html"><strong aria-hidden="true">6.3.6.</strong> team color</a></li><li class="chapter-item expanded "><a href="../state_machine_framework/MatchTimer.html"><strong aria-hidden="true">6.3.7.</strong> timing a match</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/StateTimer.html"><strong aria-hidden="true">6.3.7.1.</strong> simple timer</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../metaprogramming/options.html"><strong aria-hidden="true">6.4.</strong> Setting Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../state_machine_framework/Converters.html"><strong aria-hidden="true">6.4.1.</strong> adding more conversions to the OptionsFile</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Home.html"><strong aria-hidden="true">7.</strong> Evlib [WIP]</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../evlib/Importing-Into-Your-Project.html"><strong aria-hidden="true">7.1.</strong> Importing Into Your Project</a></li><li class="chapter-item expanded "><a href="../evlib/Sample-Code.html"><strong aria-hidden="true">7.2.</strong> Sample Code</a></li><li class="chapter-item expanded "><a href="../evlib/Using-EVLib-Minimally.html"><strong aria-hidden="true">7.3.</strong> Using EVLib Minimally</a></li><li class="chapter-item expanded "><a href="../evlib/Logging-Example.html"><strong aria-hidden="true">7.4.</strong> Logging Example</a></li><li class="chapter-item expanded "><a href="../evlib/Robot-Configuration.html"><strong aria-hidden="true">7.5.</strong> Robot Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-TeleOp-Program.html"><strong aria-hidden="true">7.6.</strong> Basic TeleOp Program</a></li><li class="chapter-item expanded "><a href="../evlib/Basic-Autonomous-Program.html"><strong aria-hidden="true">7.7.</strong> Basic Autonomous Program</a></li><li class="chapter-item expanded "><a href="../evlib/Customizing-StateMachineBuilder.html"><strong aria-hidden="true">7.8.</strong> Customizing StateMachineBuilder</a></li><li class="chapter-item expanded "><a href="../evlib/Servo-Presets.html"><strong aria-hidden="true">7.9.</strong> Servo Presets</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-the-Configuration.html"><strong aria-hidden="true">7.10.</strong> Adding Servos to the Configuration</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-TeleOp.html"><strong aria-hidden="true">7.11.</strong> Adding Servos to TeleOp</a></li><li class="chapter-item expanded "><a href="../evlib/Adding-Servos-to-Autonomous.html"><strong aria-hidden="true">7.12.</strong> Adding Servos to Autonomous</a></li><li class="chapter-item expanded "><a href="../evlib/Vuforia-and-OpenCV-Beacon-Color-Detection.html"><strong aria-hidden="true">7.13.</strong> Vuforia and OpenCV Beacon Color Detection</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../evlib/Features.html">Evlib Feature Index [WIP]</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">FTC Programming with ElectronVolts</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>OptionsFile is used to store values in a file and manage the conversions of those values to certain types. You can create an OptionsFile in three ways. In all three, a <a href="Converters.html">Converters</a> object is required.</p>
+<pre><code class="language-java">OptionsFile opts = new OptionsFile(UtilConverters.getInstance(), File file); //from an existing file
+OptionsFile opts = new OptionsFile(UtilConverters.getInstance(), Map&lt;String, String&gt; map); //from a map of String to String
+OptionsFile opts = new OptionsFile(UtilConverters.getInstance()); //from thin air!
+</code></pre>
+<p>Then you can add items to it:</p>
+<pre><code class="language-java">String name = &quot;Mr. Prof. Dr. Adm. Rev. Sir Gerald Archibald Edgar Shelby Bartholomew Reginald Eggbert Mortimer Alphonso Smith XLII, Jr.&quot;;
+int age = 83; //shoutout to my octogenarians
+double height = 98.8; //inches
+TeamColor teamColor = TeamColor.BLUE;
+
+opts.set(&quot;name&quot;, name);
+opts.set(&quot;age&quot;, age);
+opts.set(&quot;height&quot;, height);
+opts.set(&quot;teamColor&quot;, teamColor);
+</code></pre>
+<p>Or get items from it:</p>
+<pre><code class="language-java">String name = opts.get(&quot;name&quot;, String.class); //get the name
+Integer age = opts.get(&quot;age&quot;, 0); //get the age. If not found, use 0.
+Double height = opts.get(&quot;height&quot;, 0.0); //get the height. If not found, use 0.0.
+TeamColor teamColor = opts.get(&quot;teamColor&quot;, null); //get the teamColor. If not found, use null.
+</code></pre>
+<p>Or save it to a file:</p>
+<pre><code class="language-java">if (opts.writeToFile(new File(&quot;person.txt&quot;))) {
+    System.out.println(&quot;Save success!&quot;);
+} else {
+    System.out.println(&quot;File not found!&quot;);
+}
+</code></pre>
+<p>You can also set and get arrays of values of any type supported by the given <a href="Converters.html">Converters</a>.</p>
+<pre><code class="language-java">Integer[] array1 = { 1, 2, 3 };
+opts.setArray(&quot;array&quot;, array1);
+Integer[] array2 = opts.getArray(&quot;array&quot;, Integer.class);
+
+TeamColor[] array3 = { TeamColor.RED, TeamColor.RED, TeamColor.BLUE };
+opts.setArray(&quot;array&quot;, array3);
+TeamColor[] array4 = opts.getArray(&quot;array&quot;, TeamColor.class);
+</code></pre>
+<p><a href="https://github.com/FTC7393/state-machine-framework/blob/master/src/ftc/electronvolts/util/OptionsFile.java">ftc/electronvolts/util/OptionsFile.java</a></p>
+<pre><code class="language-java">package ftc.electronvolts.util.files;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.IllegalFormatConversionException;
+import java.util.List;
+import java.util.Map;
+import java.util.MissingResourceException;
+import java.util.regex.Pattern;
+
+/**
+ * This file was made by the electronVolts, FTC team 7393
+ *
+ * This class stores and retrieves values from a file. It should probably be
+ * replaced by an XML or JSON interpreter.
+ */
+public class OptionsFile {
+    private static final String DEFAULT_ARRAY_SEPARATOR = &quot;,&quot;;
+    private static final String DEFAULT_SEPARATOR = &quot;=&quot;;
+
+    /**
+     * converts objects to and from strings
+     */
+    private final Converters converters;
+
+    /**
+     * stores the strings that are read to and written from files
+     */
+    private Map&lt;String, String&gt; values;
+
+    /**
+     * @param converters the utilities that convert strings to and from objects
+     */
+    public OptionsFile(Converters converters) {
+        this.converters = converters;
+        values = new HashMap&lt;&gt;();
+    }
+
+    /**
+     * @param converters the utilities that convert strings to and from objects
+     * @param values the map of values to be loaded
+     */
+    public OptionsFile(Converters converters, Map&lt;String, String&gt; values) {
+        this.converters = converters;
+        this.values = values;
+    }
+
+    /**
+     * retrieve an OptionsFile from a file
+     *
+     * @param converters the utilities that convert strings to and from objects
+     * @param file the file to read from
+     * @return the OptionsFile
+     */
+    public OptionsFile(Converters converters, File file) {
+        this.converters = converters;
+        values = new HashMap&lt;&gt;();
+        BufferedReader br = null;
+        try {
+            //read each line of the file
+            br = new BufferedReader(new FileReader(file));
+            String separator = br.readLine();
+            if (separator == null) return;
+            String line;
+            while ((line = br.readLine()) != null) {
+                try {
+                    //split the line at the &quot;=&quot;
+                    String[] elements = line.split(separator);
+
+                    //extract the key and value from the split line
+                    String key = elements[0].trim();
+                    String value = elements[1].trim();
+
+                    //put the key and value into the map
+                    values.put(key, value);
+                } catch (IndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * store the values to a file
+     *
+     * @param file the file
+     * @return whether or not it worked
+     */
+    public boolean writeToFile(File file) {
+        try {
+            FileWriter fw = new FileWriter(file);
+
+            String separator = DEFAULT_SEPARATOR;
+            boolean done = false;
+            while (!done) {
+                done = true;
+                for (Map.Entry&lt;String, String&gt; entry : values.entrySet()) {
+                    if (entry.getKey().contains(separator) || entry.getValue().contains(separator)) {
+                        done = false;
+                        separator += DEFAULT_SEPARATOR;
+                        break;
+                    }
+                }
+            }
+
+            fw.write(separator + &quot;\n&quot;);
+            for (Map.Entry&lt;String, String&gt; entry : values.entrySet()) {
+                fw.write(entry.getKey() + separator + entry.getValue() + &quot;\n&quot;);
+            }
+            fw.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     * @return A map of all the values from the file
+     */
+    public Map&lt;String, String&gt; getValues() {
+        return values;
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a boolean
+     */
+    public void set(String tag, boolean value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Boolean.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a byte
+     */
+    public void set(String tag, byte value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Byte.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a char
+     */
+    public void set(String tag, char value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Character.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a short
+     */
+    public void set(String tag, short value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Short.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value an int
+     */
+    public void set(String tag, int value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Integer.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a long
+     */
+    public void set(String tag, long value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Long.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a float
+     */
+    public void set(String tag, float value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Float.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param value a double
+     */
+    public void set(String tag, double value) {
+        //convert the value to a string and add the key-value pair to the values map
+        values.put(tag, Double.toString(value));
+    }
+
+    /**
+     * set a value in the map
+     *
+     * @param tag the name of the value
+     * @param object the Object to put into the map
+     */
+    public &lt;T&gt; void set(String tag, T object) {
+
+        //if the object is null, add a null value to the map
+        if (object == null) {
+            values.put(tag, null);
+            return;
+        }
+
+        //get the class to convert to
+        Class&lt;T&gt; clazz = (Class&lt;T&gt;) object.getClass();
+
+        //get the converter for the specified class
+        Converter&lt;T&gt; converter = converters.getConverter(clazz);
+
+        //throw an error if there is no converter for the class
+        if (converter == null) {
+            throw new MissingResourceException(&quot;No converter given.&quot;, converters.getClass().getName(), clazz.getName());
+        }
+
+        //convert the value to a string
+        String string = converter.toString(object);
+
+        //if the result is null, throw an exception
+        if (string == null) throw new IllegalFormatConversionException((char) 0, clazz);
+
+        //add the key-value pair to the values map
+        values.put(tag, string);
+    }
+
+    /**
+     * set an array of values in a map
+     * 
+     * @param tag the name of the value
+     * @param objects the array of objects to put in the map
+     */
+    public &lt;T&gt; void setArray(String tag, T[] objects) {
+        setArray(tag, objects, DEFAULT_ARRAY_SEPARATOR);
+    }
+
+    /**
+     * set an array of values in a map
+     * 
+     * @param tag the name of the value
+     * @param objects the array of objects to put in the map
+     * @param separator the string to join the array elements with. Cannot be in
+     *            the output of the conversion for any item of the array
+     */
+    public &lt;T&gt; void setArray(String tag, T[] objects, String separator) {
+        //if the object is null, add a null value to the map
+        if (objects == null) {
+            values.put(tag, null);
+            return;
+        }
+
+        //get the class to convert to
+        Class&lt;T&gt; clazz = (Class&lt;T&gt;) objects.getClass().getComponentType();
+
+        //get the converter for the specified class
+        Converter&lt;T&gt; converter = converters.getConverter(clazz);
+
+        //throw an error if there is no converter for the class
+        if (converter == null) {
+            throw new MissingResourceException(&quot;No converter given for \&quot;&quot; + clazz.getName() + &quot;\&quot;.&quot;, converters.getClass().getName(), clazz.getName());
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        boolean first = true;
+        for (T object : objects) {
+            if (!first) stringBuilder.append(separator);
+            first = false;
+
+            //convert the value to a string
+            String string = converter.toString(object);
+
+            //if the result is null, throw an exception
+            if (string == null) throw new IllegalFormatConversionException((char) 0, clazz);
+            if (string.contains(separator)) {
+                throw new IllegalArgumentException(&quot;Converted input \&quot;&quot; + string + &quot;\&quot; cannot contain separator \&quot;&quot; + separator + &quot;\&quot;.&quot;);
+            }
+
+            //append it to the string builder
+            stringBuilder.append(string);
+        }
+
+        //build the string
+        String string = stringBuilder.toString();
+
+        //add the key-value pair to the values map
+        values.put(tag, string);
+    }
+
+    /**
+     * 
+     * @param tag the name of the value
+     * @param clazz the class to convert to
+     * @return an array of the specified type
+     * @throws IllegalArgumentException if there is no converter for the given
+     *             type
+     */
+    public &lt;T&gt; T[] getArray(String tag, Class&lt;T&gt; clazz) {
+        return getArray(tag, clazz, DEFAULT_ARRAY_SEPARATOR);
+    }
+
+    /**
+     * 
+     * @param tag the name of the value
+     * @param clazz the class to convert to
+     * @param separator the string to separate the array elements with (not a
+     *            regex)
+     * @return an array of the specified type
+     * @throws IllegalArgumentException if there is no converter for the given
+     *             type
+     */
+    public &lt;T&gt; T[] getArray(String tag, Class&lt;T&gt; clazz, String separator) {
+        //get the converter for the specified class
+        Converter&lt;T&gt; converter = converters.getConverter(clazz);
+
+        //throw an error if there is no converter for the class
+        if (converter == null) {
+            throw new MissingResourceException(&quot;No converter given.&quot;, converters.getClass().getName(), clazz.getName());
+        }
+
+        if (!values.containsKey(tag)) {
+            throw new IllegalArgumentException();
+        }
+
+        //get the value from the map
+        String string = values.get(tag);
+
+        //if the input is null, return null
+        if (string == null) return null;
+
+        //separate the string into parts. use the separator as a literal string, not a regex
+        String[] parts = string.split(Pattern.quote(separator));
+
+        T[] results = (T[]) Array.newInstance(clazz, parts.length);
+        for (int i=0; i&lt;parts.length; i++) {
+            String part = parts[i];
+
+            //convert the string to the object
+            T result = converter.fromString(part);
+
+            //if the result is null, throw an exception
+            if (result == null) throw new IllegalFormatConversionException((char) 0, clazz);
+
+            results[i] = result;
+        }
+
+        return results;
+    }
+
+    /**
+     * @param tag the name of the value
+     * @param clazz the class to convert to
+     * @return the value converted to the specified type
+     * @throws MissingResourceException if there is no converter for the given
+     *             type
+     * @throws IllegalArgumentException if there is no value with the given tag
+     * @throws IllegalFormatConversionException if the string could not be
+     *             converted to the specified object
+     */
+    public &lt;T&gt; T get(String tag, Class&lt;T&gt; clazz) {
+        if (clazz == null) {
+            throw new IllegalArgumentException(&quot;clazz cannot be null.&quot;);
+        }
+
+        //get the converter for the specified class
+        Converter&lt;T&gt; converter = converters.getConverter(clazz);
+
+        //throw an error if there is no converter for the class
+        if (converter == null) {
+            throw new MissingResourceException(&quot;No converter given.&quot;, converters.getClass().getName(), clazz.getName());
+        }
+
+        if (!values.containsKey(tag)) {
+            throw new IllegalArgumentException();
+        }
+
+        //get the value from the map
+        String string = values.get(tag);
+
+        //if the input is null, return null
+        if (string == null) return null;
+
+        //convert the string to the object
+        T result = converter.fromString(string);
+
+        //if the result is null, throw an exception
+        if (result == null) throw new IllegalFormatConversionException((char) 0, clazz);
+
+        return result;
+    }
+
+    /**
+     * @param tag the name of the value
+     * @param clazz the class to convert to
+     * @param fallback the value to use if the conversion fails
+     * @return the value converted to the specified type
+     */
+    public &lt;T&gt; T get(String tag, Class&lt;T&gt; clazz, T fallback) {
+        //try to convert, otherwise return the fallback
+        try {
+            return get(tag, clazz);
+        } catch (IllegalArgumentException e) {
+            return fallback;
+        }
+    }
+
+    /**
+     * @param tag the name of the value
+     * @param fallback the value to use if none is found
+     * @return the value converted to the specified type
+     * @throws IllegalArgumentException if there is no converter for the given
+     *             type
+     */
+    public &lt;T&gt; T get(String tag, T fallback) {
+        //get the class to convert to
+        Class&lt;T&gt; clazz = (Class&lt;T&gt;) fallback.getClass();
+
+        return get(tag, clazz, fallback);
+    }
+
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../state_machine_framework/Logger.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../state_machine_framework/InputExtractor.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../state_machine_framework/Logger.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../state_machine_framework/InputExtractor.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
