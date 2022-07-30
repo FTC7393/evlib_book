@@ -10,7 +10,6 @@
         - [Compile and Install](./starter/program/install.md)
 - [Operation Modes](./opmodes/README.md)
     - [Base Operation Mode](./opmodes/base.md)
-    - [abstract opmodes](./evlib/AbstractOp.md)
     - [abstract teleop](./evlib/AbstractTeleOp.md)
     - [abstract autonomous](./evlib/AbstractAutoOp.md)
     - [tuning the servo presets](./evlib/AbstractServoTuneOp.md)
