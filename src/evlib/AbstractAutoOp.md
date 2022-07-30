@@ -1,4 +1,4 @@
-AbstractAutoOp extends [AbstractOp](AbstractOp.md) and adds code to run a state machine. You can create an autonomous by extending this class and creating the StateMachine in the buildStates() method. [Here](Basic-Autonomous-Program.md) is an example. See also: [AbstractTeleOp](AbstractTeleOp.md)
+AbstractAutoOp extends [AbstractOp](../opmodes/base.md) and adds code to run a state machine. You can create an autonomous by extending this class and creating the StateMachine in the buildStates() method. [Here](Basic-Autonomous-Program.md) is an example. See also: [AbstractTeleOp](AbstractTeleOp.md)
 
 [ftc/evlib/opmodes/AbstractAutoOp.java](https://github.com/FTC7393/EVLib/blob/master/EVLib/src/main/java/ftc/evlib/opmodes/AbstractAutoOp.java)
 

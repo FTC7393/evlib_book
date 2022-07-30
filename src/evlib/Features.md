@@ -9,7 +9,7 @@ EVLib includes the [state-machine-framework](https://github.com/FTC7393/state-ma
 * [control of mecanum wheels](Mecanum-Control.md)
 * [servo configuration](Servo-Config.md)
 * [servo speed control](Servo-Speed-Control.md)
-* [abstract opmodes](AbstractOp.md)
+* [abstract opmodes](../opmodes/base.md)
 * [abstract teleop](AbstractTeleOp.md)
 * [abstract autonomous](AbstractAutoOp.md)
 * [tuning the servo presets](AbstractServoTuneOp.md)
