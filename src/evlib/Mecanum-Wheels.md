@@ -1,3 +1,5 @@
+> This class has been found to have logic errors, though the source of these has not been pinpointed. We are currently working on an alternative
+
 Before you read this, it might be helpful to read about the [NMotors](NMotors.md) class first.
 
 Mecanum wheels use diagonal forces to move in any direction. Here is a diagram of the direction of the force of each wheel when moving forward:

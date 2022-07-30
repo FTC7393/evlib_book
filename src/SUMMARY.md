@@ -40,7 +40,7 @@
         - [the Motor interfaces](./evlib/Motor-and-MotorEnc.md)
         - [creating motors and continuous servos](./evlib/Creating-Motors.md)
         - [grouping motors](./evlib/NMotors.md)
-        - [driving mecanum wheels](./evlib/Mecanum-Wheels.md)
+        - [[BROKEN] driving mecanum wheels](./evlib/Mecanum-Wheels.md)
         - [control of mecanum wheels](./evlib/Mecanum-Control.md)
     - [Sensors]()
         - [analog sensors](./evlib/Analog-Sensors.md)
