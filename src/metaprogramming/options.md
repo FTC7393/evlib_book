@@ -10,7 +10,7 @@ This collection of classes gives you a dynamic solution to this problem:
 
 These classes allow you to set variables by running an `AbstractOptionsOp`, then access them later in an unrelated Opmode.
 
->NOTE: Option setting is an **opt-in** feature. An opmode for setting options is not included.
+>NOTE: Option setting is an **opt-in** feature. An opmode for setting options does not show up by default.
 
 ## Interface
 
@@ -25,9 +25,9 @@ The table on the right shows a list of option names and their current values.
 * For approximate continuous variables (e.g. floating-points), press the left/right triggers.
     * The depth of the trigger press will be reflected in the rate at which the option is modified (the heavier the touch, the more the variable goes up).
 * To save the options, press the start button
-    * **The options will not save when the opmode finishes**
+    * **The options will not save the opmode finishes but the start button is not pressed**
 * To clear changes to the last save, press the reset button
-    * **This will irrevocably remove all changes that are not saved**
+    * **This will irrevocably remove all changes that were not saved**
 
 ## Defining Variables
 

@@ -1,4 +1,4 @@
-> This page is out of date
+> This page is out of date. You can find a new guide to options [here](../metaprogramming/options.md)
 
 AbstractOptionsOp extends [AbstractOp](../opmodes/base.md). You can use it to take input from the gamepad and store settings for autonomous in a file on the robot phone. It uses [OptionsFile](https://github.com/FTC7393/state-machine-framework/wiki/OptionsFile) from the state-machine-framework.
 
