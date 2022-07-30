@@ -1,3 +1,5 @@
+> This class has been found to have logic errors, though the source of these has not been pinpointed. We are currently working on an alternative
+
 Using the [MecanumMotors](Mecanum-Wheels.md) class that converts velocity in the X, Y, and R directions, we need a way to add control algorithms, such as gyro stabilization or line following.
 
 The gyro algorithm would look like:

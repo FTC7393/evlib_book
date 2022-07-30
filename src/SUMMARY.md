@@ -41,7 +41,7 @@
         - [creating motors and continuous servos](./evlib/Creating-Motors.md)
         - [grouping motors](./evlib/NMotors.md)
         - [[BROKEN] driving mecanum wheels](./evlib/Mecanum-Wheels.md)
-        - [control of mecanum wheels](./evlib/Mecanum-Control.md)
+        - [[BROKEN] control of mecanum wheels](./evlib/Mecanum-Control.md)
     - [Sensors]()
         - [analog sensors](./evlib/Analog-Sensors.md)
         - [averaging analog sensors](./evlib/AveragedSensor.md)
